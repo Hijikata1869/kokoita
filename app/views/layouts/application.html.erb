@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Kokoita</title>
+    <title><%= yield(:title) %> | Kokoita</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,28 +10,6 @@
   </head>
 
   <body>
-  <header>
-    <nav class="navbar  fixed-top navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">トップ</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item"></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <hr>
-
-  <div>
     <%= yield %>
-  </div>
-
-  <hr>  
-  <footer>
-    <p>2020 Copyright reserved kokoita</p>
-  </footer>
   </body>
 </html>
