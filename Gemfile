@@ -3,9 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
-gem 'bootstrap', '~> 4.5.0'
-gem 'jquery-rails'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.2.4.2'
 # Use sqlite3 as the database for Active Record
@@ -65,3 +62,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'mysql2', '~> 0.5.3'
+
+gem 'devise'
+
+gem 'rails-i18n', '~> 5.1'
+gem 'devise-i18n'
+
+gem 'bootstrap', '~> 4.4.1'
+gem 'jquery-rails'
