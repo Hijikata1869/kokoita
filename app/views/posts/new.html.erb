@@ -1,0 +1,22 @@
+<% provide(:title, "New Post") %>
+
+<h1>投稿を作成する</h1>
+
+<%= form_with model: @post, local: true do |form| %>
+
+  <%= form.label :見つけた生き物 %>
+  <%= form.text_field :found_animal %>
+
+  <%= form.label :ジャンル %>
+  <%= form.collection_radio_buttons(:category, Category.all, :id, :category) %>
+
+  <%= form.label :発見場所 %>
+  <%= form.collection_select(:prefecture, Prefecture.all, :id, :prefecture) %>
+
+  <%= form.label :発見年月 %>
+  <%= form.date_select(:found_date, date_separator: '/', discard_day: true) %>
+
+  <%= form.label :コメント %>
+  <%= form.text_area :content %>
+
+<% end %>
