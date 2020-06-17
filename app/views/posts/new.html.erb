@@ -1,22 +1,43 @@
 <% provide(:title, "New Post") %>
 
-<h1>投稿を作成する</h1>
+<div class="new-post">
 
-<%= form_with model: @post, local: true do |form| %>
+  <div class="container mt-5">
+    <h1 class="">投稿を作成する</h1>
+    <div class="form_group mt-5">
 
-  <%= form.label :見つけた生き物 %>
-  <%= form.text_field :found_animal %>
+      <%= form_with model: @post, local: true do |form| %>
 
-  <%= form.label :ジャンル %>
-  <%= form.collection_radio_buttons(:category, Category.all, :id, :category) %>
+        <div class="form-row mb-4">
+          <%= form.label :見つけた生き物, class: "mr-1" %>
+          <%= form.text_field :found_animal %>
+        </div>
 
-  <%= form.label :発見場所 %>
-  <%= form.collection_select(:prefecture, Prefecture.all, :id, :prefecture) %>
+        <div class="form-row mb-4">
+          <%= form.label :ジャンル, class: "mr-1" %>
+          <%= form.collection_radio_buttons(:category, Category.all, :id, :category) %>
+        </div>
 
-  <%= form.label :発見年月 %>
-  <%= form.date_select(:found_date, date_separator: '/', discard_day: true) %>
+        <div class="form-row mb-4">
+          <%= form.label :発見場所, class: "mr-1" %>
+          <%= form.collection_select(:prefecture, Prefecture.all, :id, :prefecture) %>
+        </div>
 
-  <%= form.label :コメント %>
-  <%= form.text_area :content %>
+        <div class="form-row mb-4">
+          <%= form.label :発見年月, class: "mr-1" %>
+          <%= form.date_select(:found_date, date_separator: "/", discard_day: true) %>
+        </div>
 
-<% end %>
+        <div class="form-row mb-4">
+          <%= form.label :コメント, class: "mr-1" %>
+          <%= form.text_area :content %>
+        </div>
+
+        <div class="form-row mb-4 mx-auto">
+          <%= form.submit "投稿する", class: "btn btn-primary" %>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
