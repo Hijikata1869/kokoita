@@ -12,7 +12,11 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
+    <% if user_signed_in? %>
+      <%= render 'layouts/login_user_header' %>
+    <% else %>
+      <%= render 'layouts/no_login_user_header' %>
+    <% end %>
     <%= render 'layouts/flash' %>
     <%= yield %>
     <%= render 'layouts/footer' %>
