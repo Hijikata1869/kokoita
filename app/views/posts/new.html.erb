@@ -33,6 +33,12 @@
           <%= form.text_area :content %>
         </div>
 
+        <div class="form-row mb-4">
+          <%= form.label :画像を投稿する, class: "mr-1" %>
+          <%= form.file_field :image %>
+          <%= form.hidden_field :image_cache %>
+        </div>
+
         <div class="form-row mb-4 mx-auto">
           <%= form.submit "投稿する", class: "btn btn-primary" %>
         </div>
