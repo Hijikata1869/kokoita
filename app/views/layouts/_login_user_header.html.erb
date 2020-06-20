@@ -20,7 +20,7 @@
       </form>
        <ul class="navbar-nav pr-lg-5">
         <li class="nav-item"><%= link_to "投稿する", new_post_path, class: "nav-link" %></li>
-        <li class="nav-item pl-lg-3"><%= link_to "マイページ", edit_user_registration_path, class: "nav-link" %></li>
+        <li class="nav-item pl-lg-3"><a href="/users/<%= current_user.id %>" class="nav-link">マイページ</a></li>
         <li class="nav-item pl-lg-3"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
        </ul>
     </div>
