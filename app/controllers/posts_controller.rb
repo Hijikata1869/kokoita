@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :destroy]
+
 
   def index
     @posts = Post.all
@@ -25,11 +27,16 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    flash[:success] = "記事を一件削除しました"
+    redirect_to root_url
   end
 
   private
     def post_params
       params.permit(:found_animal, :content, :category_id, :prefecture_id, :found_date, :image).merge(user_id: current_user.id)
     end
+
 
 end
