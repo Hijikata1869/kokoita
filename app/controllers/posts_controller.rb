@@ -5,10 +5,14 @@ class PostsController < ApplicationController
   end
 
   def create
+    @post = current_user.posts.build(post_params)
+    if @post.save
+      flash[:success] = "投稿しました"
+      redirect_to root_url
+    end
   end
 
   def new
-    @post = Post.new
   end
 
   def edit
@@ -25,7 +29,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:found_animal, :content, :category_id, :prefecture_id, :found_date, :image)
+      params.permit(:found_animal, :content, :category_id, :prefecture_id, :found_date, :image).merge(user_id: current_user.id)
     end
 
 end

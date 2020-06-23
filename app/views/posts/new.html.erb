@@ -7,6 +7,7 @@
     <div class="form_group mt-5">
 
       <%= form_with model: @post, local: true do |form| %>
+        <%= form.hidden_field :user_id, value: current_user.id %>
 
         <div class="form-row mb-4">
           <%= form.label :見つけた生き物, class: "mr-1" %>
@@ -15,12 +16,12 @@
 
         <div class="form-row mb-4">
           <%= form.label :ジャンル, class: "mr-1" %>
-          <%= form.collection_radio_buttons(:category, Category.all, :id, :category) %>
+          <%= form.collection_radio_buttons(:category_id, Category.all, :id, :category) %>
         </div>
 
         <div class="form-row mb-4">
           <%= form.label :発見場所, class: "mr-1" %>
-          <%= form.collection_select(:prefecture, Prefecture.all, :id, :prefecture) %>
+          <%= form.collection_select(:prefecture_id, Prefecture.all, :id, :prefecture) %>
         </div>
 
         <div class="form-row mb-4">
