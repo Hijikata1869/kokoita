@@ -28,6 +28,12 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :プロフィール画像を設定する %>
+    <%= f.file_field :picture %>
+    <%= f.hidden_field :picture_cache %>
+  </div>
+
+  <div class="form-group">
     <%= f.submit t('.sign_up'), class: 'btn btn-primary' %>
   </div>
 <% end %>

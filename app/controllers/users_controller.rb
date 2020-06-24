@@ -5,6 +5,10 @@ class UsersController < ApplicationController
       @posts = @user.posts
     end
 
+    def edit
+      @user.picture.cache! unless @user.picture.blank?
+    end
+
     def destroy
     end
 end
