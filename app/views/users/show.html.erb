@@ -1,5 +1,10 @@
 <%= provide(:title, @user.nickname) %>
 <div class="mt-5">
+  <% if @user.picture? %>
+    <%= image_tag @user.image.url %>
+  <% else %>
+    <%= image_tag 'noimage.png' %>
+  <% end %>
   <h1><%= @user.nickname %></h1>
   <% if @user.posts.any? %>
     <h3>Posts (<%= @user.posts.count %>)</h3>
