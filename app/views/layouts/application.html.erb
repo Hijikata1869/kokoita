@@ -12,6 +12,11 @@
   </head>
 
   <body>
+    <% if flash[:success] %>
+      <div class="flash mt-5">
+        <%= flash[:success] %>
+      </div>
+    <% end %>
     <% if user_signed_in? %>
       <%= render 'layouts/login_user_header' %>
     <% else %>

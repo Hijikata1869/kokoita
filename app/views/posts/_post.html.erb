@@ -1,4 +1,10 @@
 <li id="post-<%= post.id %>">
+  <span><%= image_tag post.image.url %></span>
+  <span><%= post.user.nickname %></span>
+  <span><%= post.found_animal %></span>
+  <span><%= post.found_date.year %>年</span>
+  <span><%= post.found_date.month %>月</span>
+  <span><%= post.prefecture.prefecture %></span>
   <span class="content"><%= post.content %></span>
   <span class="timestamp">
     <%= time_ago_in_words(post.created_at) %> 前に投稿
