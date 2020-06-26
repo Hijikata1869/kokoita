@@ -39,7 +39,7 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.destroy
     flash[:success] = "記事を一件削除しました"
-    redirect_to root_url
+    redirect_to user_path(post.user_id)
   end
 
   private
