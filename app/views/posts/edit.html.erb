@@ -1,0 +1,19 @@
+<div class="post-edit">
+  <h1>投稿を編集する</h1>
+  <%= form_with model: @post, url: { controller: 'posts', action: 'update' }, local: true do |f| %>
+    <%= f.label :見つけた生き物 %>
+    <%= f.text_field :found_animal %>
+    <%= f.label :ジャンル %>
+    <%= f.collection_radio_buttons(:category_id, Category.all, :id, :category) %>
+    <%= f.label :発見場所 %>
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :prefecture) %>
+    <%= f.label :発見年月 %>
+    <%= f.date_select(:found_date, date_separator: "/", discard_day: true) %>
+    <%= f.label :コメント %>
+    <%= f.text_area :content %>
+    <%= f.label :画像を編集する %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+    <%= f.submit "更新する", class: "btn btn-primary" %>
+  <% end %>
+</div>

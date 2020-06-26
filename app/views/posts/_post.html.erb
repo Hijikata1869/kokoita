@@ -1,4 +1,4 @@
-<li id="post-<%= post.id %>">
+<li id="post-<%= post.id %>" class="mb-4">
   <span><%= image_tag post.image.post_thumb.url %></span>
   <span><%= post.user.nickname %></span>
   <span><%= post.found_animal %></span>
@@ -9,6 +9,7 @@
   <span class="timestamp">
     <%= time_ago_in_words(post.created_at) %> 前に投稿
     <% if current_user.id == post.user_id %>
+      <%= link_to "編集する", edit_post_path(post) %>
       <%= link_to "削除する", post, method: :delete, data: { confirm: "削除してよろしいですか？" } %>
     <% end %>
   </span>

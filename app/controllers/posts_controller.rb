@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :destroy]
+  before_action :authenticate_user!, only: [:create, :destroy, :new, :edit, :update]
 
 
   def index
@@ -18,12 +18,18 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
 
   def show
   end
 
   def update
+    @post = Post.find(params[:id])
+    if @post.update(post_update_params)
+      flash[:success] = "記事を編集しました"
+      redirect_to root_path
+    end
   end
 
   def destroy
@@ -38,6 +44,9 @@ class PostsController < ApplicationController
       params.permit(:found_animal, :content, :category_id, :prefecture_id, :found_date, :image).merge(user_id: current_user.id)
     end
 
+    def post_update_params
+      params.require(:post).permit(:found_animal, :content, :category_id, :prefecture_id, :found_date, :image).merge(user_id: current_user.id)
+    end
 
 
 

@@ -1,7 +1,7 @@
 <%= provide(:title, @user.nickname) %>
 <div class="mt-5 users-show">
 
-  <h1><%= @user.nickname %></h1>
+  <h1><a href="/users/<%= current_user.id %>"><%= @user.nickname %></a></h1>
   <% if @user.picture? %>
     <%= image_tag @user.picture.thumb.url %>
   <% else %>
