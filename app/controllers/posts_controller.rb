@@ -28,7 +28,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update(post_update_params)
       flash[:success] = "記事を編集しました"
-      redirect_to root_path
+      redirect_to user_path(@post.user_id)
+    else
+      flash[:success] = "記事が編集できませんでした"
+      redirect_to root_url
     end
   end
 
