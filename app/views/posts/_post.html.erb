@@ -1,5 +1,9 @@
 <li id="post-<%= post.id %>" class="mb-4">
-  <span><%= image_tag post.image.post_thumb.url %></span>
+  <% if post.image? %>
+    <%= image_tag post.image.post_thumb.url %>
+  <% else %>
+    <%= image_tag 'noimage.png' %>
+  <% end %>
   <span><%= post.user.nickname %></span>
   <span><%= post.found_animal %></span>
   <span><%= post.found_date.year %>年</span>
