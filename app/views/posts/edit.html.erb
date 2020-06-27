@@ -12,7 +12,7 @@
     <%= f.label :コメント %>
     <%= f.text_area :content %>
     <%= f.label :画像を編集する %>
-    <%= f.file_field :image %>
+    <%= f.file_field :image, value: @post.image %>
     <%= f.hidden_field :image_cache %>
     <%= f.submit "更新する", class: "btn btn-primary" %>
   <% end %>

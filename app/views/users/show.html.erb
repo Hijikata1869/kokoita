@@ -1,13 +1,15 @@
 <%= provide(:title, @user.nickname) %>
 <div class="mt-5 users-show">
 
-  <h1><a href="/users/<%= current_user.id %>"><%= @user.nickname %></a></h1>
+  <h1><%= @user.nickname %></h1>
   <% if @user.picture? %>
     <%= image_tag @user.picture.thumb.url %>
   <% else %>
     <%= image_tag 'noimage.png' %>
   <% end %><br>
-  <%= link_to "登録情報を更新する", edit_user_registration_path %>
+  <% if current_user.id == @user.id %>
+    <%= link_to "登録情報の更新", edit_user_registration_path, class: "btn btn-outline-primary mt-2 mb-5" %>
+  <% end %>
   <% if @user.posts.any? %>
     <h3>Posts (<%= @user.posts.count %>)</h3>
     <ol class="posts">
