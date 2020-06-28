@@ -14,7 +14,7 @@
     <%= f.label :画像を編集する %>
     <%= f.file_field :image, value: @post.image %>
     <%= f.hidden_field :image_cache %>
-    <p><label><%= f.check_box :remove_image %>プロフィール画像を削除する</label></p>
+    <p><label><%= f.check_box :remove_image %>記事の画像を削除する</label></p>
     <%= f.submit "更新する", class: "btn btn-primary" %>
   <% end %>
 </div>
