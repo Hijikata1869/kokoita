@@ -11,7 +11,12 @@
   <span><%= post.prefecture.prefecture %></span>
   <span class="content"><%= post.content %></span>
   <span class="timestamp">
-    <%= time_ago_in_words(post.created_at) %> 前に投稿
+    <% if post.created_at != post.updated_at %>
+      <%= time_ago_in_words(post.created_at) %>前に投稿
+      <%= time_ago_in_words(post.updated_at) %>前に編集
+    <% else %>
+      <%= time_ago_in_words(post.created_at) %>前に投稿
+    <% end %>
     <% if current_user.id == post.user_id %>
       <%= link_to "編集する", edit_post_path(post) %>
       <%= link_to "削除する", post, method: :delete, data: { confirm: "削除してよろしいですか？" } %>
