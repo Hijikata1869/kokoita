@@ -1,8 +1,18 @@
 <% provide(:title, "生き物を探す") %>
 
 <%= search_form_for(@q, url:search_path) do |f| %>
-  <%= f.label :found_animal_and_content, "生き物名を含む" %>
-  <%= f.search_field :found_animal_or_content_cont %>
+  <%= f.label :found_animal_and_content, "キーワード検索" %>
+  <%= f.search_field :found_animal_or_content_cont %><br>
+
+  <%= f.label :category_id_eq, "ジャンルで検索する" %>
+  <%= f.collection_select :category_id_eq, @categories, :id, :category, :include_blank => "指定なし" %><br>
+
+  <%= f.label :prefecture_id_eq, "都道府県で絞り込む" %>
+  <%= f.collection_select :prefecture_id_eq, @prefectures, :id, :prefecture, :include_blank => "指定なし" %><br>
+
+  <%= f.label :found_date, "発見時期で絞り込む" %>
+  <%= f.date_field :found_date_gteq, include_blank: true %>
+  <%= f.date_field :found_date_lteq, include_blank: true %>
 
   <%= f.submit "検索" %>
 <% end %>

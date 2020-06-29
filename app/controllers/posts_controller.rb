@@ -4,11 +4,13 @@ class PostsController < ApplicationController
 
   def index
     @q = Post.ransack(params[:q])
+    @prefectures = Prefecture.all
+    @categories = Category.all
     @posts = @q.result(distinct: true)
   end
 
   def search
-    @q = Post.search(search_params)
+    @q = Post.ransack(search_params)
     @posts = @q.result(distinct: true)
   end
 
