@@ -1,3 +1,8 @@
-<% provide(:title, "Index") %>
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<% provide(:title, "生き物を探す") %>
+
+<%= search_form_for @q do |f| %>
+  <%= f.label :found_animal_and_content, "生き物名を含む" %>
+  <%= f.search_field :found_animal_or_content_cont %>
+
+  <%= f.submit "検索" %>
+<% end %>

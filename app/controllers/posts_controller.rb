@@ -3,7 +3,13 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.all
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true)
+  end
+
+  def serch
+    @q = Post.search(search_params)
+    @posts = @q.result(distinct: true)
   end
 
   def create
@@ -49,6 +55,10 @@ class PostsController < ApplicationController
 
     def post_update_params
       params.require(:post).permit(:found_animal, :content, :category_id, :prefecture_id, :found_date, :image, :remove_image).merge(user_id: current_user.id)
+    end
+
+    def search_params
+      params.require(:q).permit!
     end
 
 
