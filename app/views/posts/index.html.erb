@@ -1,6 +1,6 @@
 <% provide(:title, "生き物を探す") %>
 
-<%= search_form_for @q do |f| %>
+<%= search_form_for(@q, url:search_path) do |f| %>
   <%= f.label :found_animal_and_content, "生き物名を含む" %>
   <%= f.search_field :found_animal_or_content_cont %>
 

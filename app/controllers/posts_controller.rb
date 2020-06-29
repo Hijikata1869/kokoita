@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     @posts = @q.result(distinct: true)
   end
 
-  def serch
+  def search
     @q = Post.search(search_params)
     @posts = @q.result(distinct: true)
   end
