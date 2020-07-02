@@ -1,6 +1,9 @@
 @import "bootstrap";
 
 /* mixins, variables, etc. */
+body {
+  font-family: 'Kosugi Maru', sans-serif;
+}
 
 
 /* universal */
@@ -12,6 +15,7 @@ header {
   .navbar {
     opacity: 1;
     background-color: #c1994d;
+    font-family: 'Kosugi Maru', sans-serif;
   }
   .navbar-brand {
     font-family: 'Alfa Slab One', cursive;
@@ -51,6 +55,7 @@ footer {
     width: 100%;
     height: 200vh;
     background-color: #f1e2be;
+    font-family: 'Kosugi Maru', sans-serif;
     .container {
       color: #c1994d;
       h2 {
