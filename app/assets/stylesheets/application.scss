@@ -2,11 +2,12 @@
 
 /* mixins, variables, etc. */
 body {
-    background-image: image-url('5f516109.jpeg');
+    /*background-image: image-url('forest.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
+    height: 80vh;*/
 }
 
 /* universal */
@@ -16,7 +17,8 @@ body {
 /* header */
 header {
   .navbar {
-    opacity: 0.9;
+    opacity: 1;
+    background-color: #c1994d;
   }
 }
 
@@ -29,14 +31,34 @@ footer {
 
 /*top page */
 .home {
-  color: white;
-  h1 {
-    padding-top: 300px;
-  }
-  .post-area {
-    background-color: white;
-    height: 500px;
 
+  .top {
+    background-image: image-url('forest.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    height: 90vh;
+    color: #47763c;
+    h1 {
+      padding-top: 200px;
+    }
+  }
+
+
+  .post-area {
+    width: 100%;
+    height: 175vh;
+    background-color: #f1e2be;
+    .container {
+      color: #c1994d;
+      h2 {
+        border-bottom: #c1994d 1px solid;
+      }
+      ol {
+        list-style: none;
+      }
+    }
   }
 }
 
