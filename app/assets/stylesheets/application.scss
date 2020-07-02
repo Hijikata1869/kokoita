@@ -1,14 +1,7 @@
 @import "bootstrap";
 
 /* mixins, variables, etc. */
-body {
-    /*background-image: image-url('forest.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    height: 80vh;*/
-}
+
 
 /* universal */
 
@@ -19,6 +12,9 @@ header {
   .navbar {
     opacity: 1;
     background-color: #c1994d;
+  }
+  .navbar-brand {
+    font-family: 'Alfa Slab One', cursive;
   }
 }
 
@@ -33,22 +29,27 @@ footer {
 .home {
 
   .top {
-    background-image: image-url('forest.jpg');
+    background-image: image-url('forest5.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: scroll;
     height: 90vh;
-    color: #47763c;
+    color: #f3eddf;
     h1 {
       padding-top: 200px;
+      font-family: 'Alfa Slab One', cursive;
+      font-size: 8rem;
+    }
+    h2{
+      font-family: 'Noto Sans JP', sans-serif;
     }
   }
 
 
   .post-area {
     width: 100%;
-    height: 175vh;
+    height: 200vh;
     background-color: #f1e2be;
     .container {
       color: #c1994d;
