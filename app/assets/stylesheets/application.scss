@@ -8,6 +8,12 @@ body {
 .must {
   color: red;
 }
+.post-user {
+  color: #c1994d;
+  &:hover {
+    text-decoration: none;
+  }
+}
 
 
 /* universal */
@@ -76,7 +82,7 @@ footer {
 .serch {
   background-color: #f1e2be;
   height: 100vh;
-  h2 {
+  h1 {
     border-bottom: solid 1px;
   }
 }
@@ -92,6 +98,10 @@ footer {
 
 /* users-show */
 .users-show {
+  background-color: #f1e2be;
+  .container {
+    border: solid 1px;
+  }
   ol {
     list-style: none;
   }
@@ -101,5 +111,14 @@ footer {
 .search {
   ol {
     list-style: none;
+  }
+}
+
+/* signup */
+.signup {
+  background-color: #f1e2be;
+  height: 100vh;
+  h1 {
+    border-bottom: solid 1px;
   }
 }

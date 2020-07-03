@@ -4,12 +4,11 @@
   <% else %>
     <%= image_tag 'noimage.png' %>
   <% end %>
-  <span><%= post.user.nickname %></span>
+  <%= link_to post.user.nickname, user_path(post.user_id), class: "post-user" %>
   <span><%= post.found_animal %></span>
   <span><%= post.found_date.year %>年</span>
   <span><%= post.found_date.month %>月</span>
   <span><%= post.prefecture.prefecture %></span>
-  <span class="content"><%= post.content %></span>
   <span class="timestamp">
     <% if post.created_at != post.updated_at %>
       <%= time_ago_in_words(post.created_at) %>前に投稿
