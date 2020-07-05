@@ -1,2 +1,8 @@
-<span class="notice"><%= notice %></span>
-<span class="alert"><%= alert %></span>
+<% flash.each do |key, value| %>
+  <div class="mb-0 alert alert-<%= bootstrap_alert(key)%> close-flash">
+    <%= value %>
+    <button type="button" class="close close-button" data-dismiss="alert">
+      &times;
+    </button>
+  </div>
+<% end %>

@@ -17,8 +17,8 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      flash[:success] = "投稿しました"
-      redirect_to root_url
+      flash[:notice] = "投稿しました"
+      redirect_to user_path(@post.user_id)
     end
   end
 
@@ -35,18 +35,18 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_update_params)
-      flash[:success] = "記事を編集しました"
+      flash[:notice] = "記事を編集しました"
       redirect_to user_path(@post.user_id)
     else
-      flash[:success] = "記事が編集できませんでした"
-      redirect_to root_url
+      flash[:alert] = "記事が編集できませんでした"
+      redirect_to user_path(@post.user_id)
     end
   end
 
   def destroy
     post = Post.find(params[:id])
     post.destroy
-    flash[:success] = "記事を一件削除しました"
+    flash[:notice] = "記事を一件削除しました"
     redirect_to user_path(post.user_id)
   end
 
