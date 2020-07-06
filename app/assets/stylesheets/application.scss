@@ -9,7 +9,7 @@ body {
 .must {
   color: red;
 }
-.post-user {
+.link-to {
   color: #c1994d;
   &:hover {
     text-decoration: none;
@@ -85,18 +85,17 @@ footer {
 .serch {
   background-color: #f1e2be;
   height: 100vh;
-  h1 {
-    border-bottom: solid 1px;
-  }
 }
 
 /* new post */
 .new-post {
   background-color: #f1e2be;
   height: 100vh;
-  h2 {
-    border-bottom: solid 1px;
-  }
+}
+
+/* post-edit */
+.post-edit {
+  height: 110vh;
 }
 
 /* users-show */
@@ -114,6 +113,13 @@ footer {
   }
 }
 
+/* search-result */
+.search-result {
+  ol {
+    list-style: none;
+  }
+}
+
 /* signup */
 .signup {
   background-color: #f1e2be;
@@ -124,4 +130,9 @@ footer {
 .signin {
   background-color: #f1e2be;
   height: 100vh;
+}
+
+/* edit-user */
+.edit-user {
+  height: 125vh;
 }

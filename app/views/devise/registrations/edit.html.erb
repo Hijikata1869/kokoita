@@ -1,50 +1,52 @@
-<h1 class="mt-5"><%= t('.title', resource: resource_name.to_s.humanize) %></h1>
+<%= provide(:title, "登録情報の変更") %>
+<div class="edit-user">
+  <div class="container pt-5">
+    <h1 class="pt-5 pb-3">登録情報の変更</h1>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= bootstrap_devise_error_messages! %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= bootstrap_devise_error_messages! %>
 
-  <div class="form-group mt-5">
-    <%= f.label :プロフィール画像を更新する %><br>
-    <%= f.file_field :picture %>
-    <%= f.hidden_field :picture_cache %>
-    <p><label><%= f.check_box :remove_picture %>プロフィール画像を削除する</label></p>
+      <div class="form-group">
+        <%= f.label :新しいプロフィール画像を選択, class: "mb-0" %>
+        <%= f.file_field :picture %><br>
+        <span><small>新しい画像を選択しない場合、プロフィール画像は変更されません</small></span>
+        <%= f.hidden_field :picture_cache %>
+        <p class="mt-4"><label><%= f.check_box :remove_picture %>現在のプロフィール画像を削除する</label></p>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :ニックネーム %>
+        <%= f.text_field :nickname, autofocus: true, autocomplete: 'nickname', class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, autocomplete: 'email', class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control' %>
+        <small class="form-text text-muted"><%= t('.leave_blank_if_you_don_t_want_to_change_it') %></small>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control'  %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :current_password %>
+        <%= f.password_field :current_password, autocomplete: 'current-password', class: 'form-control' %>
+        <small class="form-text text-muted"><%= t('.we_need_your_current_password_to_confirm_your_changes') %></small>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit t('.update'), class: 'btn btn-success px-4' %>
+      </div>
+    <% end %>
+
+    <p><%= t('.unhappy') %> <%= link_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete, class: "link-to" %></p>
 
   </div>
-
-  <div class="form-group">
-    <%= f.label :ニックネーム %>
-    <%= f.text_field :nickname, autofocus: true, autocomplete: 'nickname', class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, autocomplete: 'email', class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control' %>
-
-    <small class="form-text text-muted"><%= t('.leave_blank_if_you_don_t_want_to_change_it') %></small>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control'  %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :current_password %>
-    <%= f.password_field :current_password, autocomplete: 'current-password', class: 'form-control' %>
-
-    <small class="form-text text-muted"><%= t('.we_need_your_current_password_to_confirm_your_changes') %></small>
-  </div>
-
-  <div class="form-group">
-    <%= f.submit t('.update'), class: 'btn btn-primary' %>
-  </div>
-<% end %>
-
-<p><%= t('.unhappy') %>? <%= link_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete %>.</p>
-
-<%= link_to t('.back'), :back %>
+</div>

@@ -1,20 +1,39 @@
 <div class="post-edit">
-  <h1>投稿を編集する</h1>
-  <%= form_with model: @post, url: { controller: 'posts', action: 'update' }, local: true do |f| %>
-    <%= f.label :見つけた生き物 %>
-    <%= f.text_field :found_animal %>
-    <%= f.label :ジャンル %>
-    <%= f.collection_radio_buttons(:category_id, Category.all, :id, :category) %>
-    <%= f.label :発見場所 %>
-    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :prefecture) %>
-    <%= f.label :発見年月 %>
-    <%= f.date_select(:found_date, date_separator: "/", discard_day: true) %>
-    <%= f.label :コメント %>
-    <%= f.text_area :content %>
-    <%= f.label :画像を編集する %>
-    <%= f.file_field :image, value: @post.image %>
-    <%= f.hidden_field :image_cache %>
-    <p><label><%= f.check_box :remove_image %>記事の画像を削除する</label></p>
-    <%= f.submit "更新する", class: "btn btn-primary" %>
-  <% end %>
+  <div class="container pt-5">
+    <h1 class="pt-5 pb-1">投稿を編集する</h1>
+    <div class="form_group mt-5 pl-5">
+      <%= form_with model: @post, url: { controller: 'posts', action: 'update' }, local: true do |f| %>
+        <div class="form-row pb-4">
+          <%= f.label :見つけた生き物, class: "pr-2" %>
+          <%= f.text_field :found_animal %>
+        </div>
+        <div class="form-row pb-4">
+          <%= f.label :ジャンル, class: "pr-5" %>
+          <%= f.collection_select(:category_id, Category.all, :id, :category) %>
+        </div>      
+        <div class="form-row pb-4">
+          <%= f.label :発見場所, class: "pr-5" %>
+          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :prefecture) %>
+        </div>
+        <div class="form-row pb-4">
+          <%= f.label :発見年／月, class: "pr-4" %>
+          <%= f.date_select(:found_date, date_separator: "/", discard_day: true) %>
+        </div>
+        <div class="form-row pb-4">
+          <%= f.label :コメント, class: "pr-5" %>
+          <%= f.text_area :content, size: "30x5" %>
+        </div>
+        <div class="form-row pb-2 mb-0">
+          <%= f.label :新しい画像を選択する, class: "pr-2" %>
+          <%= f.file_field :image, value: @post.image %>
+          <%= f.hidden_field :image_cache %>
+        </div>
+        <span><small>新しい画像を選択しない場合、記事の画像は変更されません</small></span>
+        <div class="form-row pt-4">
+          <p><label><%= f.check_box :remove_image %>記事の画像を削除する</label></p>
+        </div>
+          <%= f.submit "更新する", class: "btn btn-success px-4" %>
+      <% end %>
+    </div>
+  </div>
 </div>
