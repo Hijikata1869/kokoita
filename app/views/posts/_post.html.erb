@@ -1,6 +1,6 @@
 <li id="post-<%= post.id %>" class="pb-5">
   <% if post.image? %>
-    <%= image_tag post.image.post_thumb.url %>
+    <%= link_to image_tag(post.image.post_thumb.url), post_path(post.id) %>
   <% else %>
     <%= image_tag 'noimage.png' %>
   <% end %>
@@ -16,6 +16,7 @@
     <% else %>
       <%= time_ago_in_words(post.created_at) %>前に投稿
     <% end %>
+    <%= link_to "詳しく見る", post_path(post.id), class: "link-to" %>
     <% if user_signed_in? && current_user.id == post.user_id %>
       <%= link_to "編集する", edit_post_path(post), class: "link-to" %>
       <%= link_to "削除する", post, method: :delete, data: { confirm: "削除してよろしいですか？" }, class: "link-to" %>

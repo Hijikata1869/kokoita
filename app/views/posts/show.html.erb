@@ -1,0 +1,23 @@
+<%= provide(:title, "投稿詳細") %>
+<div class="detailed-post">
+  <div class="container pt-5">
+    <h1 class="pt-5 pb-3">投稿詳細</h1>
+    <div class="detail ml-5">
+        <div class="animal-name">
+          <h2><%= @post.found_animal %></h2>
+        </div>
+      <div class="mb-3">
+        <%= image_tag @post.image.url %>
+      </div>
+      <div class="date-and-place mb-3">
+        <span><%= @post.found_date.year %>年</span>
+        <span><%= @post.found_date.month %>月</span>
+        <span><%= @post.prefecture.prefecture %></span>
+      </div>
+      <h3 class="mb-0 pb-1">説明</h3>
+      <div class="content">
+        <p class=""><%= @post.content %></p>
+      </div>
+    </div>
+  </div>
+</div>
