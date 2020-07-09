@@ -9,7 +9,7 @@
         <% else %>
           <%= image_tag 'noimage.png' %>
         <% end %><br>
-        <% if current_user.id == @user.id %>
+        <% if user_signed_in? && current_user.id == @user.id %>
           <%= link_to "登録情報の更新", edit_user_registration_path, class: "btn btn-outline-success mt-2 mb-5 ml-4" %>
         <% end %>
       </div>
