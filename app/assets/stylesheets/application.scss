@@ -1,5 +1,6 @@
 @import "bootstrap";
 
+
 /* mixins, variables, etc. */
 body {
   font-family: 'Kosugi Maru', sans-serif;
@@ -18,6 +19,7 @@ body {
 .alert {
   margin-top: 70px;
 }
+
 
 /* universal */
 
@@ -135,4 +137,24 @@ footer {
 /* edit-user */
 .edit-user {
   height: 125vh;
+}
+
+/* detailed-post */
+.detailed-post {
+  height: 150vh;
+  .detail {
+    background-color: whitesmoke;
+    color: #4d4d4d;
+    .link-to {
+      color: #4d4d4d;
+    }
+  }
+}
+
+/* thumb-post */
+.thumb-post {
+  border-bottom: solid 1px;
+  .post-content {
+    /*border-bottom: solid 1px;*/
+  }
 }

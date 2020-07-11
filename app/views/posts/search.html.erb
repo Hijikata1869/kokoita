@@ -1,14 +1,16 @@
 <% provide(:title, "検索結果")  %>
 <div class="search-result">
-  <div class="container pt-5">
+  <div class="container pt-5 px-md-5">
     <h1 class="pt-5 pb-4">検索結果</h1>
-    <% if @posts.any? %>
-      <h3>検索結果 <%= @posts.count %>件</h3>
-      <ol class="posts">
-        <%= render @posts %>
-      </ol>
-    <% else %>
-      <h3>該当の記事は見つかりませんでした</h3>
-    <% end%>
+    <div class="px-md-5">
+      <% if @posts.any? %>
+        <h3 class="pb-3">検索結果 <%= @posts.count %>件</h3>
+        <ol class="posts px-md-5">
+          <%= render @posts %>
+        </ol>
+      <% else %>
+        <h3>該当の記事は見つかりませんでした</h3>
+      <% end%>
+    </div>
   </div>
 </div>

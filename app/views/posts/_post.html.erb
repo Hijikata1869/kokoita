@@ -1,24 +1,33 @@
-<li id="post-<%= post.id %>" class="pb-5">
-  <% if post.image? %>
-    <%= image_tag post.image.post_thumb.url %>
-  <% else %>
-    <%= image_tag 'noimage.png' %>
-  <% end %>
-  <%= link_to post.user.nickname, user_path(post.user_id), class: "post-user link-to" %>
-  <span><%= post.found_animal %></span>
-  <span><%= post.found_date.year %>年</span>
-  <span><%= post.found_date.month %>月</span>
-  <span><%= post.prefecture.prefecture %></span>
-  <span class="timestamp">
-    <% if post.created_at != post.updated_at %>
-      <%= time_ago_in_words(post.created_at) %>前に投稿
-      <%= time_ago_in_words(post.updated_at) %>前に編集
-    <% else %>
-      <%= time_ago_in_words(post.created_at) %>前に投稿
-    <% end %>
-    <% if user_signed_in? && current_user.id == post.user_id %>
-      <%= link_to "編集する", edit_post_path(post), class: "link-to" %>
-      <%= link_to "削除する", post, method: :delete, data: { confirm: "削除してよろしいですか？" }, class: "link-to" %>
-    <% end %>
+<li id="post-<%= post.id %>" class="mb-5 pb-2 container">
+  <div class="thumb-post d-flex flex-row">
+    <div class="post-image mr-3">
+      <% if post.image? %>
+        <%= link_to image_tag(post.image.post_thumb.url), post_path(post.id) %>
+      <% else %>
+        <%= image_tag 'noimage.png' %>
+      <% end %>
+    </div>
+    <div class="post-content">
+      <h4><span><%= post.found_animal %></span></h4>
+      <p>発見者：<%= link_to post.user.nickname, user_path(post.user_id), class: "post-user link-to" %></p>
+      <p>
+      <span><%= post.found_date.year %>年</span>
+      <span><%= post.found_date.month %>月</span>
+      <span><%= post.prefecture.prefecture %></span>
+      </p>
+      <span class="timestamp">
+        <% if post.created_at != post.updated_at %>
+          <%= time_ago_in_words(post.created_at) %>前に投稿
+          <%= time_ago_in_words(post.updated_at) %>前に編集
+        <% else %>
+          <%= time_ago_in_words(post.created_at) %>前に投稿
+        <% end %>
+        <%= link_to "詳しく見る", post_path(post.id), class: "link-to" %>
+        <% if user_signed_in? && current_user.id == post.user_id %>
+          <%= link_to "編集する", edit_post_path(post), class: "link-to" %>
+          <%= link_to "削除する", post, method: :delete, data: { confirm: "削除してよろしいですか？" }, class: "link-to" %>
+        <% end %>
   </span>
+    </div>
+  </div>
 </li>
