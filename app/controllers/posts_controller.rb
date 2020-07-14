@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def search
     @q = Post.ransack(search_params)
-    @posts = @q.result(distinct: true)
+    @posts = @q.result(distinct: true).page(params[:page]).per(2).order("created_at DESC")
   end
 
   def create

@@ -24,6 +24,7 @@
           <p class="pl-4">まだ投稿がありません</p>
           <%= link_to "最初の記事を投稿する", new_post_path, class: "btn btn-lg btn-success ml-4 mt-3" %>
         <% end%>
+        <%= paginate @posts %>
       </div>
     </div>
   </div>
