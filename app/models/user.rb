@@ -8,6 +8,5 @@ class User < ApplicationRecord
   
   has_many :posts, dependent: :destroy
 
-  validates :nickname, presence: true
-  validates :nickname, length: { maximum: 30 }
+  validates :nickname, presence: true, length: { minimum: 2, maximum: 30 }
 end
