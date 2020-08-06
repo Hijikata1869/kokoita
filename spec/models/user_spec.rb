@@ -29,7 +29,7 @@ RSpec.describe User, type: :model do
       end
     end
     context "無効なニックネーム" do
-      it "ニックネームがなければ無効な状態であるということ" do
+      it "ニックネームが無ければ無効な状態であるということ" do
         user = FactoryBot.build(:user, nickname: nil)
         user.valid?
         expect(user.errors[:nickname]).to include("を入力してください")
