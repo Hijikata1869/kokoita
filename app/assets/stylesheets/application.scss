@@ -36,7 +36,7 @@ body {
     .page-link {
       background: #28A745;
       border-color: #28A745;
-      border-radius: 20px;
+      border-radius: 50%;
     }
   }
 }
@@ -44,7 +44,7 @@ body {
   li {
     a {
       &:hover {
-        border-radius: 20px;
+        border-radius: 50%;
         background: #28A745;
         opacity: 0.9;
       }
@@ -53,12 +53,12 @@ body {
 }
 .page-item:last-child {
   .page-link {
-    border-radius: 25px;
+    border-radius: 50%;
   }
 }
 .page-item:first-child {
   .page-link {
-    border-radius: 25px;
+    border-radius: 50%;
   }
 }
 .pagination {
