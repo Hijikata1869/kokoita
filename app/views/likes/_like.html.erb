@@ -1,0 +1,12 @@
+<% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
+  <%= link_to "/posts/#{@post.id}/likes/#{@post.likes.ids}", method: :delete, class: "element", remote: true do %>
+    <%= icon("fas", "smile", class: "like") %>
+  <% end %>
+<% else %>
+  <%= link_to "/posts/#{@post.id}/likes", method: :post, class: "element", remote: true do %>
+    <%= icon("fas", "meh", class: "unlike") %>
+  <% end %>
+<% end %>
+<div class="count">
+  <%= @post.likes.length %>
+</div>

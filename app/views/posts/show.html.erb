@@ -20,8 +20,31 @@
             <span><%= @post.found_date.month %>月</span>
             <span><%= @post.prefecture.prefecture %></span>
           </div>
-          <div class="content pb-3">
+          <div class="content mb-3">
             <p class=""><%= @post.content %></p>
+          </div>
+          <div class="favorite">
+            <% if user_signed_in? %>
+              <% if @post.liked_by?(current_user) %>
+                <p>
+                  <%= link_to post_likes_path(@post.id), class: "link-to", method: :delete do %>
+                    <i class="fas fa-thumbs-up fa-2x"></i>
+                  <% end %>
+                  いいね！済み
+                </p>
+                <p><%= @post.likes.count %><span>件のいいね！</span></p>
+              <% else%>
+                <p>
+                  <%= link_to post_likes_path(@post.id), class: "link-to", method: :post do %>
+                    <i class="far fa-thumbs-up fa-2x"></i>
+                  <% end %>
+                  いいね！する
+                </p>
+                <p><%= @post.likes.count %><span>件のいいね！</span></p>
+              <% end %>
+            <% else %>
+              <p><%= @post.likes.count %><span>件のいいね！</span></p>
+            <% end %>
           </div>
       </div>
     </div>
