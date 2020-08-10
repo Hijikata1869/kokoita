@@ -81,3 +81,5 @@ gem 'mini_magick'
 gem 'ransack'
 
 gem 'kaminari'
+
+gem 'font-awesome-sass', '~> 5.13.0'
