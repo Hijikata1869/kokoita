@@ -1,0 +1,13 @@
+<li id="comment-<%= @comment.id %>" class="mb-5 pb-2 container">
+  <div class="comment">
+    <div class="user-comment">
+      <% @comments.each do |c| %>
+        <%= link_to c.user.nickname, user_path(c.user.id), class: "link-to" %>
+        <%= c.content %><br>
+        <% if user_signed_in? && current_user.id == c.user.id %>
+          <%= link_to "削除する", post_comments_path(c.post.id,c.id), method: :delete, data: { confirm: "削除してよろしいですか？" }, class: "link-to" %>
+        <% end %><br>
+      <% end %>
+    </div>
+  </div>
+</li>

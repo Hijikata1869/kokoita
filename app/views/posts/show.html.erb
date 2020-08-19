@@ -47,6 +47,20 @@
             <% end %>
           </div>
       </div>
+      <div class="comment">
+        <h2>コメント</h2>
+        <% if user_signed_in? && @comments.any? %>
+          <%= render 'comments/comment' %>
+        <% elsif user_signed_in? %>
+          <%= form_for([@post, @comment]) do |f| %>
+            <%= f.text_field :content %>
+            <%= f.submit 'コメントする', class: 'btn btn-success mt-2' %>
+          <% end %>
+        <% else %>
+          <%= render 'comments/comment' %>
+          <p>ログインするとコメントができます</p>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

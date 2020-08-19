@@ -8,6 +8,9 @@ body {
   font-family: 'Kosugi Maru', sans-serif;
   color: #c1994d;
   background-color: #f1e2be;
+  li {
+    list-style: none;
+  }
 }
 .must {
   color: red;
