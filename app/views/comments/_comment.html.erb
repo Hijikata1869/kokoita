@@ -1,0 +1,16 @@
+<li id="comment-<%= @comment.id %>" class="mt-2">
+  <div class="pb-1">
+    <% @comments.each do |c| %>
+      <div class="user-comment pt-2 mb-2">
+        <i class="fas fa-user"></i>
+        <%= link_to c.user.nickname, user_path(c.user.id), class: "link-to pl-1" %><br>
+        <i class="fas fa-comment"></i>
+        <%= c.content %><br>
+        <% if user_signed_in? && current_user.id == c.user.id %>
+          <i class="fas fa-trash-alt"></i>
+          <%= link_to "このコメントを削除する", post_comments_path(c.post.id,c.id), method: :delete, data: { confirm: "削除してよろしいですか？" }, class: "link-to" %>
+        <% end %><br>
+      </div>
+    <% end %>
+  </div>
+</li>

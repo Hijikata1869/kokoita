@@ -19,6 +19,9 @@ class PostsController < ApplicationController
     if @post.save
       flash[:notice] = "投稿しました"
       redirect_to user_path(@post.user_id)
+    else
+      flash[:alert] = "投稿できませんでした。入力内容を見直してください。"
+      redirect_to new_post_path
     end
   end
 
@@ -31,6 +34,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comment = current_user.comments.build
+    @comments = @post.comments
   end
 
   def update

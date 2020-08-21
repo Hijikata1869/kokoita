@@ -49,4 +49,22 @@
       </div>
     </div>
   </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+      </div>
+      <div class="detail comments pt-3 col-md-6">
+        <h5>コメント</h5>
+        <% if user_signed_in? && @comments.any? %>
+          <%= render 'comments/comment' %>
+          <%= render 'comments/form' %>
+        <% elsif user_signed_in? %>
+          <%= render 'comments/form' %>
+        <% else %>
+          <%= render 'comments/comment' %>
+          <p>ログインするとコメントができます</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
