@@ -1,6 +1,6 @@
-<li id="post-<%= post.id %>" class="mb-5 pb-2 container">
+<li id="post-<%= post.id %>" class="mb-md-5 pb-md-2 container">
   <div class="thumb-post d-flex flex-row">
-    <div class="post-image mr-3">
+    <div class="post-image mr-md-3">
       <% if post.image? %>
         <%= link_to image_tag(post.image.post_thumb.url), post_path(post.id) %>
       <% else %>

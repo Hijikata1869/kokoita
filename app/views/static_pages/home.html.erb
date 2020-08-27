@@ -1,21 +1,21 @@
-<div class="home">
+<div class="home pb-md-2">
 
   <div class="top">
-    <div class="container text-center">
+    <div class="container-fluid text-center">
       <h1>Kokoita</h1>
       <h2>あなたが出会った生き物の「ここにいた」をみんなに伝えよう!</h2>
     </div>
   </div>
 
-  <div class="post-area pt-5">
+  <div class="post-area pt-md-5">
     <div class="container">
-      <h2 class="text-center pb-1 mb-5">新着記事</h2>
-      <div class="posts px-md-5 ml-md-5">
-        <ol class="posts px-md-5 ml-md-5">
+      <h2 class="text-center pb-md-1 mb-md-5">新着投稿</h2>
+      <div class="posts px-lg-5 ml-lg-5">
+        <ol class="posts px-lg-5 ml-lg-5">
           <%= render @posts %>
         </ol>
       </div>
-      <div class="pagination-container">
+      <div class="pagination-container pb-md-5 mb-md-5">
           <%= paginate @posts %>
       </div>
     </div>

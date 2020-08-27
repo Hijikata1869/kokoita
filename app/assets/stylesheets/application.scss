@@ -4,10 +4,16 @@
 
 
 /* mixins, variables, etc. */
+html { 
+  height: auto;
+}
 body {
+  height: auto;
   font-family: 'Kosugi Maru', sans-serif;
   color: #c1994d;
   background-color: #f1e2be;
+  /*padding-top: 70px;
+  padding-bottom: 70px;*/
   li {
     list-style: none;
   }
@@ -118,7 +124,6 @@ footer {
 
   .post-area {
     width: 100%;
-    height: 190vh;
     background-color: #f1e2be;
     font-family: 'Kosugi Maru', sans-serif;
     .container {
@@ -136,7 +141,7 @@ footer {
 /* serch */
 .serch {
   background-color: #f1e2be;
-  height: 100vh;
+  height: auto;
 }
 
 /* new post */
@@ -191,7 +196,7 @@ footer {
 
 /* detailed-post */
 .detailed-post {
-  height: 200vh;
+  height: auto;
   .detail {
     background-color: whitesmoke;
     color: #4d4d4d;
@@ -211,4 +216,37 @@ footer {
 /* thumb-post */
 .thumb-post {
   border-bottom: solid 1px;
+}
+
+/* レスポンシブ */
+/* タブレット */
+
+@media screen and (max-width: 768px) {
+  /*ボディ*/
+  /*body {
+    padding-top: 56px;
+    padding-bottom: 96px;
+  }*/
+
+  /*ホーム画面*/
+  .home {
+    .top {
+      h1 {
+        padding-top: 350px;
+      }
+    }
+  }
+
+  /*投稿詳細画面*/
+  .detailed-post {
+    height: auto;
+  }
+
+  /*画像のレスポンシブ化*/
+  img {
+  width:100%;
+  max-width: 100%;
+  height: auto;
+  }
+
 }

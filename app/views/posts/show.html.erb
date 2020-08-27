@@ -49,8 +49,8 @@
       </div>
     </div>
   </div>
-  <div class="container">
-    <div class="row">
+  <div class="container mb-md-5 pb-md-5">
+    <div class="row mb-md-5">
       <div class="col-md-2">
       </div>
       <div class="detail comments pt-3 col-md-6">
@@ -60,8 +60,10 @@
           <%= render 'comments/form' %>
         <% elsif user_signed_in? %>
           <%= render 'comments/form' %>
-        <% else %>
+        <% elsif !user_signed_in? && @comments.any? %>
           <%= render 'comments/comment' %>
+          <p>ログインするとコメントができます</p>
+        <% else %>
           <p>ログインするとコメントができます</p>
         <% end %>
       </div>

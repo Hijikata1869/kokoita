@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def search
     @q = Post.ransack(search_params)
-    @posts = @q.result(distinct: true).page(params[:page]).per(2).order("created_at DESC")
+    @posts = @q.result(distinct: true).page(params[:page]).per(5).order("created_at DESC")
   end
 
   def create
@@ -34,7 +34,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comment = current_user.comments.build
+    if user_signed_in?
+      @comment = current_user.comments.build
+    end
     @comments = @post.comments
   end
 
