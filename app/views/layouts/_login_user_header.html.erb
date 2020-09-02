@@ -14,10 +14,6 @@
         <li class="nav-item pr-lg-4"><%= link_to "ホーム", root_path, class: "nav-link" %></li>
         <li class="nav-item"><%= link_to "生き物を探す", posts_path, class: "nav-link" %></li>
       </ul>
-      <form class="form-inline mr-lg-5">
-        <input class="form-control mr-lg-2 col" type="search" placeholder="キーワード検索" aria-label="Search">
-        <button class="btn btn-success my-lg-2" type="submit">検索</button>
-      </form>
        <ul class="navbar-nav pr-lg-5">
         <li class="nav-item"><%= link_to "投稿する", new_post_path, class: "nav-link" %></li>
         <li class="nav-item pl-lg-3"><%= link_to "マイページ", user_path(current_user.id), class: "nav-link" %></li>

@@ -1,27 +1,27 @@
 <% provide(:title, "生き物を探す") %>
-<div class="serch">
-  <div class="container pt-5">
+<div class="search">
+  <div class="container pt-md-5">
     <h1 class="pt-5 pb-1">生き物を探す</h1>
-    <div class="serch-form pt-3">
+    <div class="search-form pt-3">
       <%= search_form_for(@q, url:search_path) do |f| %>
-        <div class="serch-element pb-3">
+        <div class="search-element pb-3">
           <%= f.label :found_animal_and_content, "キーワード検索" %>
           <%= f.search_field :found_animal_or_content_cont %><br>
         </div>
-        <div class="serch-element pb-3">
+        <div class="search-element pb-3">
           <%= f.label :category_id_eq, "ジャンルで検索する" %>
           <%= f.collection_select :category_id_eq, @categories, :id, :category, :include_blank => "指定なし" %><br>
         </div>
-        <div class="serch-element pb-3">
+        <div class="search-element pb-3">
           <%= f.label :prefecture_id_eq, "都道府県で絞り込む" %>
           <%= f.collection_select :prefecture_id_eq, @prefectures, :id, :prefecture, :include_blank => "指定なし" %><br>
         </div>
-        <div class="serch-element pb-3">
+        <div class="search-element pb-3">
           <%= f.label :found_date, "発見時期で絞り込む" %>
-          <%= f.date_field :found_date_gteq, include_blank: true %>
-          <%= f.date_field :found_date_lteq, include_blank: true %>
+          <%= f.date_field :found_date_gteq, include_blank: true %> 〜 
+          <%= f.date_field :found_date_lteq, include_blank: true, class: 'end-date' %>
         </div>
-        <div class="serch-element pb-3"><%= f.submit('この条件で検索する',class: 'btn btn-success my-1 mb-5 px-4') %></div>
+        <div class="search-element pb-3"><%= f.submit('この条件で検索する',class: 'btn btn-success my-md-1 mb-md-5 px-md-4 search-btn') %></div>
       <% end %>
     </div>
   </div>

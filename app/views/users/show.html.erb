@@ -1,19 +1,19 @@
 <%= provide(:title, @user.nickname) %>
-<div class="pt-5 users-show pb-md-5 mb-md-5">
-  <div class="container pt-5 pb-md-5">
+<div class="pt-md-5 users-show pb-md-5 mb-md-5">
+  <div class="container pt-md-5 pb-md-5">
     <h1><%= @user.nickname %></h1>
     <div class=row>
       <div class="col-md-4">
         <% if @user.picture? %>
-          <%= image_tag @user.picture.thumb.url %>
+          <%= image_tag @user.picture.thumb.url, class: 'user-picture' %>
         <% else %>
           <%= image_tag 'noimage.png' %>
         <% end %><br>
         <% if user_signed_in? && current_user.id == @user.id %>
-          <%= link_to "登録情報の更新", edit_user_registration_path, class: "btn btn-outline-success mt-2 mb-5 ml-4" %>
+          <%= link_to "登録情報の更新", edit_user_registration_path, class: "btn btn-outline-success mt-md-2 mb-md-5 ml-md-4 update-btn" %>
         <% end %>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-8 post-title">
         <% if @user.posts.any? %>
           <h3 class="pb-3"><%= @user.nickname %>の投稿</h3>
           <ol class="posts">
@@ -22,7 +22,7 @@
         <% else %>
           <h3 class="pb-3"><%= @user.nickname %>の投稿</h3>
           <p class="pl-4">まだ投稿がありません</p>
-          <%= link_to "最初の記事を投稿する", new_post_path, class: "btn btn-lg btn-success ml-4 mt-3" %>
+          <%= link_to "最初の記事を投稿する", new_post_path, class: "btn btn-lg btn-success ml-md-4 mt-md-3 post-btn" %>
         <% end%>
         <%= paginate @posts %>
       </div>
