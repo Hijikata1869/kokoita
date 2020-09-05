@@ -423,4 +423,19 @@ footer {
   padding-left: 10px;
 }
 
+/*signup*/
+.signup {
+  height: auto;
+  .form-group {
+    p {
+      margin-top: 20px;
+    }
+  }
+}
+
+/*signin*/
+.signin {
+  height: auto;
+}
+
 }
