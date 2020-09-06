@@ -11,4 +11,11 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   validates :nickname, presence: true, length: { minimum: 2, maximum: 30 }
+
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com', nickname: 'ゲスト') do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
+
 end

@@ -251,6 +251,21 @@ footer {
   max-width: 100%;
   height: auto;
   }
+
+  /*ユーザ情報更新画面*/
+  .edit-user {
+    height: auto;
+  }
+
+  /*新規会員登録画面*/
+  .signup {
+    height: auto;
+  }
+
+  /*ログイン画面*/
+  .signin {
+    height: auto;
+  }
 }
 
 @media screen and (max-width: 750px) {
@@ -380,6 +395,8 @@ footer {
   }
   .update-btn {
     margin-left: 100px;
+    margin-top: 20px;
+    margin-bottom: 30px;
   }
   .thumb-post {
     margin-bottom: 30px;
@@ -421,6 +438,26 @@ footer {
 .form_group {
   padding-top: 10px;
   padding-left: 10px;
+}
+
+/*signup*/
+.signup {
+  height: auto;
+  .form-group {
+    p {
+      margin-top: 20px;
+    }
+  }
+}
+
+/*signin*/
+.signin {
+  height: auto;
+}
+
+/*edit-user*/
+.edit-user {
+  height: auto;
 }
 
 }

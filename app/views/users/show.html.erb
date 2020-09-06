@@ -10,7 +10,7 @@
           <%= image_tag 'noimage.png' %>
         <% end %><br>
         <% if user_signed_in? && current_user.id == @user.id %>
-          <%= link_to "登録情報の更新", edit_user_registration_path, class: "btn btn-outline-success mt-md-2 mb-md-5 ml-md-4 update-btn" %>
+          <%= link_to "登録情報の更新", edit_user_registration_path, class: "btn btn-outline-success mt-md-2 mb-md-5 ml-md-3 update-btn" %>
         <% end %>
       </div>
       <div class="col-md-8 post-title">
