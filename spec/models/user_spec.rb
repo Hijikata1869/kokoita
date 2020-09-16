@@ -2,19 +2,21 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 
-  it "ポストを持っていること" do
-    user = FactoryBot.create(:user, :with_posts)
-    expect(user.posts.length).to eq 5
-  end
+  # it "ポストを持っていること" do
+  #   user = FactoryBot.create(:user, :with_posts)
+  #   expect(user.posts.length).to eq 5
+  # end
 
   it "有効なファクトリを持つこと" do
     expect(FactoryBot.build(:user)).to be_valid
   end
-  it "姓、名、メール、パスワードがあれば有効な状態であること" do
+
+  it "ニックネーム、メール、パスワードがあれば有効な状態であること" do
     user = FactoryBot.build(:user)
     user.valid?
     expect(user).to be_valid
   end
+
   describe "ニックネームのバリデーション" do
     context "有効なニックネーム" do
       it "2文字のニックネーム" do
@@ -28,6 +30,7 @@ RSpec.describe User, type: :model do
         expect(user[:nickname]).to_not include("を入力してください")
       end
     end
+
     context "無効なニックネーム" do
       it "ニックネームが無ければ無効な状態であるということ" do
         user = FactoryBot.build(:user, nickname: nil)
@@ -46,6 +49,7 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
   describe "メールアドレスのバリデーション" do
     it "メールアドレスがなければ無効な状態であるということ" do
       user = FactoryBot.build(:user, email: nil)
@@ -59,6 +63,7 @@ RSpec.describe User, type: :model do
       expect(user.errors[:email]).to include("はすでに存在します")
     end
   end
+
   describe "パスワードのバリデーション" do
     context "有効なパスワード" do
       it "6文字のパスワード" do
@@ -85,4 +90,5 @@ RSpec.describe User, type: :model do
       end
     end
   end
+  
 end

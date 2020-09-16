@@ -1,14 +1,14 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe "Posts", type: :request do
+# RSpec.describe "Posts", type: :request do
 
-  describe "#index" do
-    it "正常なレスポンスを返すこと" do
-      get '/posts'
-      expect(response).to be_successful
-      expect(response).to have_http_status "200"
-    end
-  end
+#   describe "#index" do
+#     it "正常なレスポンスを返すこと" do
+#       get '/posts'
+#       expect(response).to be_successful
+#       expect(response).to have_http_status "200"
+#     end
+#   end
   
   # describe "#create" do
   #   context "認証済みのユーザとして" do
@@ -27,4 +27,4 @@ RSpec.describe "Posts", type: :request do
   #   end
   # end
 
-end
+# end

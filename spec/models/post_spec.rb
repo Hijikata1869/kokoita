@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
 
-  let(:user) { FactoryBot.create(:user) }
-  let(:post) { FactoryBot.create(:post, user: user) }
+  let(:post) { FactoryBot.create(:post) }
 
   describe "Postのバリデーション" do
     it "生き物の名前、カテゴリー、発見場所、発見年／月が選択されていれば有効な投稿であること" do
