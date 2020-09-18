@@ -8,7 +8,7 @@ class Post < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  validates :found_animal, presence: true
+  validates :found_animal, presence: true, length: { maximum: 255 }
   validates :category_id, presence: true
   validates :prefecture_id, presence: true
   validates :found_date, presence: true
