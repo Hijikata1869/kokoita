@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 
+  let(:user) { FactoryBot.create(:user) }
+
   # it "ポストを持っていること" do
   #   user = FactoryBot.create(:user, :with_posts)
   #   expect(user.posts.length).to eq 5

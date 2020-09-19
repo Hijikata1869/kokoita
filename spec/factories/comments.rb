@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :comment do
     content { "TestContent" }
-    user
-    post
+    association :post
+    user { post.user }
   end
 end

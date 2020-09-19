@@ -8,6 +8,8 @@ RSpec.describe Comment, type: :model do
 
     it "ユーザ、ポスト、適当な文字数であれば有効なこと" do
       expect(comment).to be_valid
+      puts "このコメントのユーザは#{comment.user.inspect}"
+      puts "このコメントのポストは#{comment.post.inspect}"
     end
     it " 2文字のコメント " do
       comment = FactoryBot.build(:comment, content: "a" * 2 )
@@ -23,16 +25,6 @@ RSpec.describe Comment, type: :model do
   end
 
   context "無効なコメント" do
-    it "ユーザがいなければ無効であること" do
-      comment = FactoryBot.build(:comment, user: nil)
-      comment.valid?
-      expect(comment).to_not be_valid
-    end
-    it "ポストが無ければ無効であること" do
-      comment = FactoryBot.build(:comment, post: nil)
-      comment.valid?
-      expect(comment).to_not be_valid
-    end
     it "空のコメント" do
       comment = FactoryBot.build(:comment, content: nil )
       comment.valid?
