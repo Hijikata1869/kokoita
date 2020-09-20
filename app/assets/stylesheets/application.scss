@@ -206,6 +206,9 @@ footer {
     .link-to {
       color: #4d4d4d;
     }
+    .noimage {
+      margin-left: 150px;
+    }
   }
   .comments {
     background-color: rgb(240, 236, 236);
@@ -243,6 +246,11 @@ footer {
   /*投稿詳細画面*/
   .detailed-post {
     height: auto;
+    .detail {
+      .noimage {
+        margin-left: 0px;
+      }
+    }
   }
 
   /*画像のレスポンシブ化*/

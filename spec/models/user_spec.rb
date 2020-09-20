@@ -4,10 +4,10 @@ RSpec.describe User, type: :model do
 
   let(:user) { FactoryBot.create(:user) }
 
-  # it "ポストを持っていること" do
-  #   user = FactoryBot.create(:user, :with_posts)
-  #   expect(user.posts.length).to eq 5
-  # end
+  it "ポストを持っていること" do
+    user = FactoryBot.create(:user, :with_posts)
+    expect(user.posts.length).to eq 5
+  end
 
   it "有効なファクトリを持つこと" do
     expect(FactoryBot.build(:user)).to be_valid

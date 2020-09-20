@@ -1,7 +1,7 @@
 <%= provide(:title, "投稿詳細") %>
 <div class="detailed-post">
-  <div class="container pt-lg-5">
-    <div class="row pt-lg-5">
+  <div class="container pt-md-5">
+    <div class="row pt-md-5">
       <div class="col-md-2">
         <h1>投稿詳細</h1>
       </div>
@@ -13,7 +13,11 @@
             <%= link_to @post.user.nickname, user_path(@post.user_id), class: "link-to" %>
           </div>
           <div class="post-image ml-lg-3 mb-3">
-            <%= image_tag @post.image.url %>
+            <% if @post.image? %>
+              <%= image_tag @post.image.url %>
+            <% else %>
+              <%= image_tag 'noimage.png', class: "noimage" %>
+            <% end %>
           </div>
           <div class="date-and-place mb-3">
             <span><%= @post.found_date.year %>年</span>
