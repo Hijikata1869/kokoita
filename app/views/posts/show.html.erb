@@ -31,7 +31,7 @@
             <% if user_signed_in? %>
               <% if @post.liked_by?(current_user) %>
                 <p>
-                  <%= link_to post_likes_path(@post.id), class: "link-to", method: :delete do %>
+                  <%= link_to post_likes_path(@post.id), class: "link-to unlike", method: :delete do %>
                     <i class="fas fa-thumbs-up fa-2x"></i>
                   <% end %>
                   いいね！済み
@@ -39,7 +39,7 @@
                 <p><%= @post.likes.count %><span>件のいいね！</span></p>
               <% else%>
                 <p>
-                  <%= link_to post_likes_path(@post.id), class: "link-to", method: :post do %>
+                  <%= link_to post_likes_path(@post.id), class: "link-to like", method: :post do %>
                     <i class="far fa-thumbs-up fa-2x"></i>
                   <% end %>
                   いいね！する
