@@ -33,6 +33,6 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV['heroku_53826d5bae447e1'] %>
-  username: <%= ENV['b530d861864cbc'] %>
-  password: <%= ENV['9a044622'] %>
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
