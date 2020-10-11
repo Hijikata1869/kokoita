@@ -32,7 +32,10 @@ test:
   host: localhost
 
 production:
-  <<: *default
-  database: <%= ENV['DB_NAME'] %>
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
+  adapter: mysql2
+  encoding: utf8
+  database: kokoita_production
+  pool: 5
+  username: root
+  password: <%= Rails.application.credentials.productiondb[:password] %>
+  host: kokoitadb.cfjxyhbvyf6i.ap-northeast-1.rds.amazonaws.com 
