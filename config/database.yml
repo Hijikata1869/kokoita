@@ -15,8 +15,9 @@ development:
   database: kokoita_development
   pool: 5
   username: root
-  password:
-  host: localhost
+  password: password
+  host: db
+  
 
 
 # Warning: The database defined as "test" will be erased and
@@ -28,8 +29,8 @@ test:
   database: kokoita_test
   pool: 5
   username: root
-  password:
-  host: localhost
+  password: password
+  host: db
 
 production:
   adapter: mysql2

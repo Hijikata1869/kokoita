@@ -43,11 +43,10 @@ ActiveRecord::Schema.define(version: 2020_08_13_061938) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "category_id"
+    t.integer "category_id"
     t.bigint "prefecture_id"
     t.date "found_date"
     t.string "image"
-    t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["prefecture_id"], name: "index_posts_on_prefecture_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
@@ -68,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_08_13_061938) do
     t.datetime "updated_at", null: false
     t.string "nickname"
     t.string "picture"
+    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -75,7 +75,6 @@ ActiveRecord::Schema.define(version: 2020_08_13_061938) do
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
-  add_foreign_key "posts", "categories"
   add_foreign_key "posts", "prefectures"
   add_foreign_key "posts", "users"
 end
