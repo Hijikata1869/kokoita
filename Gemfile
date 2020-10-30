@@ -63,9 +63,9 @@ group :test do
   gem 'webdrivers', '~> 3.0'
 end
 
-group :production, :staging do
-  gem 'unicorn'
-end
+# group :production, :staging do
+#   gem 'unicorn'
+# end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -89,3 +89,5 @@ gem 'ransack'
 gem 'kaminari'
 
 gem 'font-awesome-sass', '~> 5.13.0'
+
+gem 'unicorn'
