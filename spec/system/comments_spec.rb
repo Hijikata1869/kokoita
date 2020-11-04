@@ -4,7 +4,7 @@ RSpec.describe "Comments", type: :system do
 
   scenario "ログインユーザはポストにコメントをする" do
     user = FactoryBot.create(:user)
-    post = FactoryBot.create(:post)
+    # post = FactoryBot.create(:post)
 
     visit root_path
     click_link "ログイン"

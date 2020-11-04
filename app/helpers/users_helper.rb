@@ -7,6 +7,6 @@ module UsersHelper
         "success"
       when "error"
         "danger"
-      end
+    end
   end
 end
