@@ -4,13 +4,15 @@ RSpec.describe "Comments", type: :system do
 
   scenario "ログインユーザはポストにコメントをする" do
     user = FactoryBot.create(:user)
-    # post = FactoryBot.create(:post)
+    post = FactoryBot.create(:post)
 
     visit root_path
     click_link "ログイン"
     fill_in "Eメール", with: user.email
     fill_in "パスワード", with: user.password
     click_button "ログイン"
+
+    
 
     expect {
       click_link "詳しく見る", match: :first

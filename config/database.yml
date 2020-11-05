@@ -28,9 +28,9 @@ test:
   encoding: utf8
   database: kokoita_test
   pool: 5
-  username: root
+  username: test-root
   password: password
-  host: db
+  host: test-db
 
 production:
   adapter: mysql2
