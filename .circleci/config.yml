@@ -33,8 +33,8 @@ jobs:
       - run:
           name: default mysql client install
           command: |
-            sudo qpt update
-            sudo qpt-get install default-mysql-client
+            sudo apt update
+            sudo apt-get install default-mysql-client
       
       - run:
           name: bundle Install
