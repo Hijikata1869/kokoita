@@ -20,7 +20,7 @@ jobs:
           name: Bundler install
           command: |
             gem update --system
-            gem install bundler -v 2.1.4
+            gem install bundler -v 1.17.3
 
 
       - restore_cache:
