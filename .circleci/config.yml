@@ -15,6 +15,13 @@ jobs:
     steps:
       - checkout
 
+      - run:
+          name: Bundler install
+          command: |
+            gem update --system
+            gem install bundler -v 1.17.3
+
+
       - restore_cache:
           keys:
             - kokoita-bundle-v1-{{ checksum "Gemfile.lock" }}
