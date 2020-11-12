@@ -27,8 +27,8 @@ jobs:
 
       - restore_cache:
           keys:
-            - kokoita-bundle-v1-{{ checksum "Gemfile.lock" }}
-            - kokoita-bundle-v1-
+            - kokoita-bundle-v2-{{ checksum "Gemfile.lock" }}
+            - kokoita-bundle-v2-
       
       - run:
           name: default mysql client install
@@ -41,7 +41,7 @@ jobs:
           command: bundle check -path vendor/bundle || bundle install --deployment
 
       - save_cache:
-          key: kokoita-bundle-v1-{{ checksum "Gemfile.lock" }}
+          key: kokoita-bundle-v2-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
       
