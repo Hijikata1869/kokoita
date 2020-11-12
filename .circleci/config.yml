@@ -31,7 +31,13 @@ jobs:
             - kokoita-bundle-v1-
       
       - run:
-          name: バンドルインストール
+          name: default mysql client install
+          command: |
+            sudo qpt update
+            sudo qpt-get install default-mysql-client
+      
+      - run:
+          name: bundle Install
           command: bundle check -path vendor/bundle || bundle install --deployment
 
       - save_cache:
