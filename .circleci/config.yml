@@ -2,12 +2,13 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.6.6-stretch-node
+      - image: circleci/ruby:2.6.6-node-browsers
         environment:
-          RAILS_ENV: 'test'
+          RAILS_ENV: test
           DB_HOST: 127.0.0.1
           DB_USERNAME: 'test-root'
           DB_PASSWORD: 'password'
+
       - image: circleci/mysql:5.7.29
 
     working_directory: ~/kokoita
@@ -40,7 +41,6 @@ jobs:
           name: DBの待機
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 120s
       
-      - run: bundle exec rails db:create
       - run: bundle exec rails db:scheme:load
 
       - run:
