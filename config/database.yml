@@ -30,7 +30,8 @@ test:
   pool: 5
   username: test-root
   password: password
-  host: test-db
+  host: '127.0.0.1'
+  port: 3306
 
 production:
   adapter: mysql2
