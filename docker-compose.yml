@@ -5,6 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     command: dockerize -wait tcp://db:3306 -timeout 20s bundle exec unicorn -p 3000 -c /kokoita/config/unicorn.conf.rb
+    ipc: shareable
     tty: true
     stdin_open: true
     depends_on:

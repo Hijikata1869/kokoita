@@ -5,8 +5,9 @@ jobs:
       - image: circleci/ruby:2.6.6-node-browsers
         environment:
           RAILS_ENV: test
+          BUNDLER_VERSION: 1.17.3
 
-      - image: circleci/mysql:5.7.29
+      - image: circleci/mysql:5.7
         environment:
           MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
           MYSQL_ROOT_HOST: '127.0.0.1'
@@ -48,7 +49,11 @@ jobs:
           name: DBの待機
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
       
-      - run: bundle exec rails db:schema:load
+      - run: 
+          name: 
+          command: |
+            bundle exec rake db:create
+            bundle exec rails db:schema:load
 
       - run:
           name: Rspecの実行
