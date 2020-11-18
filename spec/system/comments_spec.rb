@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Comments", type: :system do
 
+
   scenario "ログインユーザはポストにコメントをする" do
     user = FactoryBot.create(:user)
     post = FactoryBot.create(:post)

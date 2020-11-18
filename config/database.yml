@@ -29,7 +29,6 @@ test:
   database: kokoita_test
   pool: 5
   username: 'root'
-  # password: Kokoita_test_2020
   host: '127.0.0.1'
   port: 3306
 
