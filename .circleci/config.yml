@@ -46,7 +46,7 @@ jobs:
             - vendor/bundle
       
       - run:
-          name: DBの待機
+          name: wait for db
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
       
       - run: 
@@ -74,3 +74,7 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
+
+      - run:
+          name: run rubocop
+          command: bundle exec rubocop --fail-level W --display-only-fail-level-offenses
