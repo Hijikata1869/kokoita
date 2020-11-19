@@ -6,7 +6,7 @@ set :repo_url, "git@github.com:Hijikata1869/kokoita.git"
 
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/var/www/rails/kokoita"
+set :deploy_to, "/var/www/kokoita"
 
 set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
 

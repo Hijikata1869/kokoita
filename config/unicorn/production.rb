@@ -2,7 +2,7 @@ $worker  = 2
 
 $timeout = 30
 
-$app_dir = "/var/www/rails/kokoita/current"
+$app_dir = "/var/www/kokoita/current"
 
 $listen  = File.expand_path 'tmp/sockets/.unicorn.sock', $app_dir
 
