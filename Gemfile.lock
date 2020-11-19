@@ -51,6 +51,7 @@ GEM
     autoprefixer-rails (10.0.1.2)
       execjs
     bcrypt (3.1.16)
+    bcrypt_pbkdf (1.0.1)
     bindex (0.8.1)
     bootsnap (1.5.0)
       msgpack (~> 1.0)
@@ -107,6 +108,7 @@ GEM
     devise-i18n (1.9.2)
       devise (>= 4.7.1)
     diff-lcs (1.4.4)
+    ed25519 (1.2.4)
     erubi (1.9.0)
     excon (0.78.0)
     execjs (2.7.0)
@@ -362,6 +364,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt_pbkdf
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.4.1)
   byebug
@@ -374,6 +377,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise-i18n
+  ed25519
   factory_bot_rails
   fog-aws
   font-awesome-sass (~> 5.13.0)
