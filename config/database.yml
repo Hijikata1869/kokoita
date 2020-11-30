@@ -28,8 +28,9 @@ test:
   encoding: utf8
   database: kokoita_test
   pool: 5
-  username: 'root'
-  host: '127.0.0.1'
+  username: test_root
+  password: password
+  host: test-db
   port: 3306
 
 production:
