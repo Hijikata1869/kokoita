@@ -31,3 +31,4 @@
 /config/master.key
 
 github_rsa
+vendor/bundle/ruby/2.6.0/bundler/gems/mini_racer-a6e1abbe003a
