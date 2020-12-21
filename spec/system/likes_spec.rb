@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Posts", type: :system do
+RSpec.describe "Posts", type: :system, js: true do
 
   scenario "ユーザはいいねができる" do
     user = FactoryBot.create(:user)
@@ -33,6 +33,7 @@ RSpec.describe "Posts", type: :system do
 
     click_link "詳しく見る", match: :first
     first(:css, ".like").click
+    wait_for_ajax
 
     expect{
       first(:css, ".unlike").click
