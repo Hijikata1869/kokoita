@@ -20,6 +20,7 @@ AllCops:
     - 'app/controllers/application_controller.rb'
     - 'spec/system/comments_spec.rb'
     - 'config/deploy.rb'
+    - 'spec/support/selenium_chrome.rb'
 
 # 日本語でのコメントを許可
 AsciiComments:
