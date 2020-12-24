@@ -7,6 +7,12 @@
       いいね！済み
     </p>
     <p><%= post.likes.count %><span>件のいいね！</span></p>
+    <p class="text-right">
+      <%= link_to "https://twitter.com/share?url=https://www.kokoita.net/", class: "twitter-link", target: '_blank' do %>
+        <i class="fab fa-twitter-square  fa-3x"></i>
+      <% end %>
+      <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.kokoita.net%2F&layout=box_count&size=small&appId=732740227644268&width=69&height=40" width="69" height="40" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    </p>
   <% else%>
     <p>
       <%= link_to post_likes_path(post.id), class: "link-to like", method: :post, remote: true do %>
@@ -15,7 +21,19 @@
       いいね！する
     </p>
     <p><%= post.likes.count %><span>件のいいね！</span></p>
+    <p class="text-right">
+      <%= link_to "https://twitter.com/share?url=https://www.kokoita.net/", class: "twitter-link", target: '_blank' do %>
+        <i class="fab fa-twitter-square  fa-3x"></i>
+      <% end %>
+      <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.kokoita.net%2F&layout=box_count&size=small&appId=732740227644268&width=69&height=40" width="69" height="40" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    </p>
   <% end %>
 <% else %>
   <p><%= post.likes.count %><span>件のいいね！</span></p>
+  <p class="text-right">
+    <%= link_to "https://twitter.com/share?url=https://www.kokoita.net/", class: "twitter-link", target: '_blank' do %>
+      <i class="fab fa-twitter-square  fa-3x"></i>
+    <% end %>
+    <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.kokoita.net%2F&layout=box_count&size=small&appId=732740227644268&width=69&height=40" width="69" height="40" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+  </p>
 <% end %>

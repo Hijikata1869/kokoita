@@ -27,6 +27,12 @@ body {
     text-decoration: none;
   }
 }
+.twitter-link {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
 .alert {
   margin-top: 56px;
 }
