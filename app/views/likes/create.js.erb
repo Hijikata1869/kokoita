@@ -1,1 +1,5 @@
+// #likes_buttons_<%= @post.id %>この部分のHTMLだけ、renderで部分的に更新するという処理
+// セレクタ$('')で要素を取得。この場合、show.html.erbファイルのid="likes_buttons_<%= @post.id %>の要素を取得している"
+// 次にhtmlメソッドを実行。「html()」を使うと、任意のHTML要素を取得したり意図的に要素を追加・書き換えをすることが出来る。
+// この場合、元々あったdiv(いいね済みor未いいね)が、別なdiv(元々の方と逆のdiv)に入れ替えられる。
 $('#likes_buttons_<%= @post.id %>').html("<%= j(render partial: 'likes/like', locals: {post: @post}) %>");
