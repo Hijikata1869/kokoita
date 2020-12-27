@@ -14,9 +14,15 @@
         <li class="nav-item pr-lg-4"><%= link_to "ホーム", root_path, class: "nav-link" %></li>
         <li class="nav-item"><%= link_to "生き物を探す", posts_path, class: "nav-link" %></li>
       </ul>
-       <ul class="navbar-nav pr-lg-5">
+       <ul class="navbar-nav pr-lg-2">
         <li class="nav-item"><%= link_to "新規登録", new_user_registration_path, class: "nav-link" %></li>
-        <li class="nav-item pl-lg-4"><%= link_to "ログイン", new_user_session_path, class: "nav-link" %></li>
+        <li class="nav-item pl-lg-4 pr-lg-5"><%= link_to "ログイン", new_user_session_path, class: "nav-link" %></li>
+        <li class="pt-lg-1">
+          <%= link_to "https://twitter.com/share?url=https://www.kokoita.net/", class: "twitter-link", target: '_blank' do %>
+          <i class="fab fa-twitter fa-2x"></i>
+          <% end %>
+          <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.kokoita.net%2F&layout=button&size=small&appId=732740227644268&width=69&height=20" width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </li>
        </ul>
     </div>
   </nav>
