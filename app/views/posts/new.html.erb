@@ -33,9 +33,13 @@
         </div>
 
         <div class="form-row mb-4">
-          <%= form.label :画像を選択する, class: "mr-4" %>
-          <%= form.file_field :image %>
+          <%= form.label :画像を選択する, class: "mr-4" %><br>
+          <%= form.file_field :image, id: "file" %>
           <%= form.hidden_field :image_cache %>
+        </div>
+        <div class="image-preview pb-4">
+          <p id="preview"></p>
+          <img id="preview-image" >
         </div>
 
         <div class="form-row mb-md-4 mx-auto pb-5 ">

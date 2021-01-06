@@ -154,6 +154,12 @@ footer {
 .new-post {
   background-color: #f1e2be;
   height: auto;
+  .image-preview {
+    img {
+      max-width: 200px;
+      max-height: 150px;
+    }
+  }
 }
 
 /* post-edit */
@@ -245,6 +251,18 @@ footer {
     .top {
       h1 {
         padding-top: 350px;
+      }
+    }
+  }
+
+  /* 新規投稿作成画面 */
+  .new-post {
+    background-color: #f1e2be;
+    height: auto;
+    .image-preview {
+      img {
+        max-width: 200px;
+        max-height: 150px;
       }
     }
   }
