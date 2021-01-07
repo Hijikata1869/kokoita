@@ -13,10 +13,10 @@ CarrierWave.configure do |config|
       region: 'ap-northeast-1',
       path_style: true
     }
-    config.fog_directory  = 'image.kokoita.net'
+    config.fog_directory = 'image.kokoita.net'
     config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/image.kokoita.net'
   else
     config.storage :file
     config.enable_processing = false if Rails.env.test?
   end
-end 
+end

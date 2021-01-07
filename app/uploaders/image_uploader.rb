@@ -39,7 +39,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_whitelist
-    %w(jpg jpeg gif png)
+    %w[jpg jpeg gif png]
   end
 
   # Override the filename of the uploaded files:
@@ -48,14 +48,13 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
-  process  :resize_and_pad => [500, 300, "Center"]
+  process resize_and_pad: [500, 300, 'Center']
 
   version :thumb do
-    process resize_to_fill: [200, 200, "Center"]
+    process resize_to_fill: [200, 200, 'Center']
   end
 
   version :post_thumb do
-    process resize_to_fill: [200, 150, "Center"]
+    process resize_to_fill: [200, 150, 'Center']
   end
-
 end

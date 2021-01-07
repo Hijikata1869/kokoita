@@ -9,22 +9,22 @@
 #       expect(response).to have_http_status "200"
 #     end
 #   end
-  
-  # describe "#create" do
-  #   context "認証済みのユーザとして" do
-  #     before do
-  #       @user = FactoryBot.create(:user)
-  #     end
-  #     context "有効な属性値の場合" do
-  #       it "ポストを追加できること" do
-  #         post_params = FactoryBot.attributes_for(:post)
-  #         sign_in @user
-  #         expect {
-  #           post posts_path, params: {post: post_params}
-  #         }.to change(@user.posts, :count).by(1)
-  #       end
-  #     end
-  #   end
-  # end
+
+# describe "#create" do
+#   context "認証済みのユーザとして" do
+#     before do
+#       @user = FactoryBot.create(:user)
+#     end
+#     context "有効な属性値の場合" do
+#       it "ポストを追加できること" do
+#         post_params = FactoryBot.attributes_for(:post)
+#         sign_in @user
+#         expect {
+#           post posts_path, params: {post: post_params}
+#         }.to change(@user.posts, :count).by(1)
+#       end
+#     end
+#   end
+# end
 
 # end
