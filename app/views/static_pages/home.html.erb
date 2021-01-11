@@ -20,6 +20,16 @@
       </div>
     </div>
   </div>
+  <div class="ranking-area mb-5 pb-5">
+    <div class="container">
+      <h2 class="text-center pb-md-1 mb-md-5">いいねランキング</h2>
+        <% @ranks.each.with_index(1) do |post, index| %>
+          <%= "第#{index}位" %>
+          <%= post.user.nickname %>
+          <%= post.found_animal %><br>
+        <% end %>
+    </div>
+  </div>
 
 </div>
 
