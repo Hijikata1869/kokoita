@@ -146,6 +146,29 @@ footer {
     h2 {
       border-bottom: #c1994d 1px solid;
     }
+    #rank1 {
+      display: block;
+    }
+    #rank2 {
+      display: none;
+    }
+    #rank3 {
+      display: none;
+    }
+    .result-rank {
+      background-color: #f5efe1;
+      padding-top: 2rem;
+      padding-bottom: 1rem;
+      width: 700px;
+      margin: auto;
+      text-align: center;
+      p {
+        margin-top: 1rem;
+        .fas {
+          margin-right: 0.5rem;
+        }
+      }
+    }
   }
 }
 
