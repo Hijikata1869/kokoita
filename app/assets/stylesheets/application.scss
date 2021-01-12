@@ -169,6 +169,42 @@ footer {
         }
       }
     }
+    .controller {
+      border: 5px black solid;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .btns {
+        color: rgb(29, 28, 28);
+      }
+      .prev-btn {
+        cursor: pointer;
+      }
+      .next-btn {
+        cursor: pointer;
+      }
+      .indicator {
+        width: 100px;
+        height: 20px;
+        background-color: rgb(29, 28, 28);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        span {
+          background: #f1e2be;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          margin: 0 10px 0 10px;
+        }
+        #active {
+          background: green;
+        }
+      }
+    }
   }
 }
 

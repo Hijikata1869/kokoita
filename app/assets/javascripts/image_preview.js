@@ -12,9 +12,4 @@ document.addEventListener("turbolinks:load", function(){
     reader.readAsDataURL(input);
     document.getElementById('preview').innerHTML = "プレビュー";
   }, false);
-
-
-
-
-
-})
+});
