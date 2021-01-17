@@ -81,6 +81,20 @@ body {
 .pagination {
   justify-content: center;
 }
+.pagination {
+  .disabled {
+    .page-link {
+      background-color: #f1e2be;
+    }
+  }
+}
+.pagination {
+  .page-item {
+    .page-link {
+      border: none;
+    }
+  }
+}
 
 
 /* universal */
