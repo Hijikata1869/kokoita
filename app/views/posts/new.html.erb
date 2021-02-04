@@ -21,6 +21,7 @@
           <%= form.label :発見場所, class: "mr-5" %>
           <%= form.collection_select(:prefecture_id, Prefecture.all, :id, :prefecture) %><span class="must ml-1">必須</span>
         </div>
+        <div id='gmap'></div>
 
         <div class="form-row mb-4">
           <%= form.label :発見年／月, class: "mr-4" %>
@@ -49,4 +50,32 @@
       <% end %>
     </div>
   </div>
+
+<style>
+#gmap {
+  height: 300px;
+  width: 500px;
+  margin-left: 7rem;
+  margin-bottom: 2rem;
+}
+</style>
+
+<script>
+let map;
+function initMap(){
+  map = new google.maps.Map(document.getElementById('gmap'), {
+    center: {lat: 38, lng:140.5},
+    zoom: 12,
+  });
+
+  let marker = new google.maps.Marker({
+    position: map.getCenter(),
+    map: map
+  });
+  marker.setDraggable(true);
+
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwf221uzw_nqcoGVja1gAaxh3iKfdq8ec&callback=initMap" async defer></script>
+
 </div>
