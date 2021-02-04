@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_13_061938) do
+ActiveRecord::Schema.define(version: 2021_02_04_103441) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "category"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 2020_08_13_061938) do
     t.bigint "prefecture_id"
     t.date "found_date"
     t.string "image"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["prefecture_id"], name: "index_posts_on_prefecture_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
