@@ -57,11 +57,11 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.permit(:found_animal, :content, :category_id, :prefecture_id, :found_date, :image).merge(user_id: current_user.id)
+    params.permit(:found_animal, :content, :category_id, :prefecture_id, :found_date, :image, :latitude, :longitude).merge(user_id: current_user.id)
   end
 
   def post_update_params
-    params.require(:post).permit(:found_animal, :content, :category_id, :prefecture_id, :found_date, :image, :remove_image).merge(user_id: current_user.id)
+    params.require(:post).permit(:found_animal, :content, :category_id, :prefecture_id, :found_date, :image, :remove_image, :latitude, :longitude).merge(user_id: current_user.id)
   end
 
   def search_params

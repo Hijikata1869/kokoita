@@ -22,6 +22,8 @@
           <%= form.collection_select(:prefecture_id, Prefecture.all, :id, :prefecture) %><span class="must ml-1">必須</span>
         </div>
         <div id='gmap'></div>
+          <%= form.hidden_field :latitude, {id: "target_latitude"} %>
+          <%= form.hidden_field :longitude, {id: "target_longitude"} %>
 
         <div class="form-row mb-4">
           <%= form.label :発見年／月, class: "mr-4" %>
@@ -64,7 +66,7 @@
 let map;
 function initMap(){
   map = new google.maps.Map(document.getElementById('gmap'), {
-    center: {lat: 38, lng:140.5},
+    center: {lat: 38.26020362574981, lng:140.88349151611325},
     zoom: 12,
   });
 
@@ -73,6 +75,11 @@ function initMap(){
     map: map
   });
   marker.setDraggable(true);
+
+  google.maps.event.addListener(marker, 'dragend', function(e) {
+    document.getElementById("target_latitude").value = e.latLng.lat(),
+    document.getElementById("target_longitude").value = e.latLng.lng()
+  });
 
 }
 </script>
