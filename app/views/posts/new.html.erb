@@ -1,6 +1,6 @@
 <% provide(:title, "投稿を作成する") %>
 
-<div class="new-post" data-turbolinks="false">
+<div class="new-post">
   <div class="container pt-md-5">
     <h1 class="pt-5 pb-1">投稿を作成する</h1>
     <div class="form_group mt-md-5 pl-md-5">
@@ -52,37 +52,33 @@
       <% end %>
     </div>
   </div>
-
 <style>
-#gmap {
+  #gmap {
   height: 300px;
   width: 500px;
   margin-left: 7rem;
   margin-bottom: 2rem;
 }
 </style>
-
 <script>
-let map;
-function initMap(){
-  map = new google.maps.Map(document.getElementById('gmap'), {
-    center: {lat: 38.26020362574981, lng:140.88349151611325},
-    zoom: 12,
-  });
+  let map;
+  function initMap(){
+    map = new google.maps.Map(document.getElementById('gmap'), {
+      center: {lat: 38.26020362574981, lng:140.88349151611325},
+      zoom: 12,
+    });
 
-  let marker = new google.maps.Marker({
-    position: map.getCenter(),
-    map: map
-  });
-  marker.setDraggable(true);
+    let marker = new google.maps.Marker({
+      position: map.getCenter(),
+      map: map
+    });
+    marker.setDraggable(true);
 
-  google.maps.event.addListener(marker, 'dragend', function(e) {
-    document.getElementById("target_latitude").value = e.latLng.lat(),
-    document.getElementById("target_longitude").value = e.latLng.lng()
-  });
-
-}
+    google.maps.event.addListener(marker, 'dragend', function(e) {
+      document.getElementById("target_latitude").value = e.latLng.lat(),
+      document.getElementById("target_longitude").value = e.latLng.lng()
+    });
+  }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwf221uzw_nqcoGVja1gAaxh3iKfdq8ec&callback=initMap" async defer></script>
-
 </div>

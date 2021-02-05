@@ -15,7 +15,7 @@
         <li class="nav-item"><%= link_to "生き物を探す", posts_path, class: "nav-link" %></li>
       </ul>
        <ul class="navbar-nav pr-lg-2">
-        <li class="nav-item pt-lg-1"><%= link_to "投稿する", new_post_path, class: "nav-link" %></li>
+        <li class="nav-item pt-lg-1"><%= link_to "投稿する", new_post_path, class: "nav-link", data: {"turbolinks"=>false} %></li>
         <li class="nav-item pt-lg-1 pl-lg-3"><%= link_to "マイページ", user_path(current_user.id), class: "nav-link" %></li>
         <li class="nav-item pt-lg-1 pl-lg-3 pr-lg-5"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
         <li class="pt-lg-2">
