@@ -239,6 +239,14 @@ footer {
 .new-post {
   background-color: #f1e2be;
   height: auto;
+  #draggable {
+    margin-left: 7rem;
+  }
+  #gmap {
+    height: 300px;
+    width: 500px;
+    margin-left: 7rem;
+  }
   .image-preview {
     img {
       max-width: 200px;
