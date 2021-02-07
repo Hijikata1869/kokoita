@@ -257,7 +257,9 @@ footer {
 
 /* post-edit */
 .post-edit {
-  height: 110vh;
+  .btn {
+    margin-bottom: 50px;
+  }
 }
 
 /* users-show */

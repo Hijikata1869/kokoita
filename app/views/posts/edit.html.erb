@@ -15,6 +15,11 @@
           <%= f.label :発見場所, class: "pr-5" %>
           <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :prefecture) %>
         </div>
+        <% if @post.latitude && @post.longitude %>
+          <div id='gmap-for-edit'></div>
+          <%= f.hidden_field :latitude, {id: "target_latitude_edit"} %>
+          <%= f.hidden_field :longitude, {id: "target_longitude_edit"} %>
+        <% end %>
         <div class="form-row pb-4">
           <%= f.label :発見年／月, class: "pr-4" %>
           <%= f.date_select(:found_date, date_separator: "/", discard_day: true) %>
@@ -37,3 +42,32 @@
     </div>
   </div>
 </div>
+<style>
+#gmap-for-edit {
+  height: 300px;
+  width: 500px;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+}
+</style>
+
+<script>
+let map;
+function initMap(){
+  map = new google.maps.Map(document.getElementById('gmap-for-edit'), {
+    center: {lat:<%= @post.latitude %>, lng:<%= @post.longitude %>},
+    zoom: 12,
+  });
+
+  let marker = new google.maps.Marker({
+    position: map.getCenter(),
+    map: map
+  });
+  marker.setDraggable(true);
+  google.maps.event.addListener(marker, 'dragend', function(e) {
+    document.getElementById("target_latitude_edit").value = e.latLng.lat(),
+    document.getElementById("target_longitude_edit").value = e.latLng.lng()
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwf221uzw_nqcoGVja1gAaxh3iKfdq8ec&callback=initMap" async defer></script>

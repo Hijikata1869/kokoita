@@ -22,7 +22,7 @@
         <% else %>
           <h3 class="pb-3"><%= @user.nickname %>の投稿</h3>
           <p class="pl-4">まだ投稿がありません</p>
-          <%= link_to "最初の記事を投稿する", new_post_path, class: "btn btn-lg btn-success ml-md-4 mt-md-3 post-btn" %>
+          <%= link_to "最初の記事を投稿する", new_post_path, class: "btn btn-lg btn-success ml-md-4 mt-md-3 post-btn", data: {"turbolinks"=>false} %>
         <% end%>
         <%= paginate @posts %>
       </div>
