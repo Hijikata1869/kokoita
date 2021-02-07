@@ -24,6 +24,9 @@
             <span><%= @post.found_date.month %>月</span>
             <span><%= @post.prefecture.prefecture %></span>
           </div>
+          <% if @post.latitude && @post.longitude %>
+            <div id='show-gmap'></div>
+          <% end %>
           <div class="content mb-3">
             <p class=""><%= @post.content %></p>
           </div>
@@ -55,4 +58,21 @@
       </div>
     </div>
   </div>
+
+<script>
+let map;
+function initMap(){
+  map = new google.maps.Map(document.getElementById('show-gmap'), {
+    center: {lat:<%= @post.latitude %>, lng:<%= @post.longitude %>},
+    zoom: 12,
+  });
+
+  let marker = new google.maps.Marker({
+    position: map.getCenter(),
+    map: map
+  });
+
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwf221uzw_nqcoGVja1gAaxh3iKfdq8ec&callback=initMap" async defer></script>
 </div>

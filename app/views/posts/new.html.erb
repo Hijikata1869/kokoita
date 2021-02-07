@@ -21,8 +21,17 @@
           <%= form.label :発見場所, class: "mr-5" %>
           <%= form.collection_select(:prefecture_id, Prefecture.all, :id, :prefecture) %><span class="must ml-1">必須</span>
         </div>
+        <div class="form-row mb-2">
+          <%= form.label :詳細位置情報, class: "mr-md-3" %>
+          <input type="text" size="30" id="address">
+          <input type="button" id="target_button" value="住所検索" class="ml-md-2 mr-md-2">
+        </div>
+        <div id='gmap'></div>
+        <span id="draggable"><small>住所検索後、マーカーをドラッグ移動できます</small></span>
+          <%= form.hidden_field :latitude, {id: "target_latitude"} %>
+          <%= form.hidden_field :longitude, {id: "target_longitude"} %>
 
-        <div class="form-row mb-4">
+        <div class="form-row mt-4 mb-4">
           <%= form.label :発見年／月, class: "mr-4" %>
           <%= form.date_select(:found_date, date_separator: "/", discard_day: true) %><span class="must ml-1">必須</span>
         </div>
@@ -49,4 +58,43 @@
       <% end %>
     </div>
   </div>
+<script>
+  let map;
+  function initMap(){
+    map = new google.maps.Map(document.getElementById('gmap'), {
+      center: {lat: 38.26020362574981, lng:140.88349151611325},
+      zoom: 13,
+    });
+    let targetButton = document.getElementById('target_button');
+    targetButton.addEventListener('click', function(){
+      let address = document.getElementById('address').value;
+      let geocoder = new google.maps.Geocoder();
+      geocoder.geocode({ address: address }, function(results, status){
+        if (status === 'OK'){
+          let lat = results[0].geometry.location.lat();
+          let lng = results[0].geometry.location.lng();
+          let mark = {lat: lat, lng: lng};
+          let searchedMap = new google.maps.Map(document.getElementById('gmap'), {
+            center: mark,
+            zoom: 13,
+          });
+
+          let marker = new google.maps.Marker({
+            position: searchedMap.getCenter(),
+            map: searchedMap
+          });
+          marker.setDraggable(true);
+          google.maps.event.addListener(marker, 'dragend', function(e) {
+            document.getElementById("target_latitude").value = e.latLng.lat(),
+            document.getElementById("target_longitude").value = e.latLng.lng()
+          });
+        }else{
+          alert('失敗しました。 理由：' + status);
+        }
+      });
+    });
+  }
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwf221uzw_nqcoGVja1gAaxh3iKfdq8ec&callback=initMap" async defer></script>
 </div>
