@@ -260,6 +260,12 @@ footer {
   .btn {
     margin-bottom: 50px;
   }
+  #gmap-for-edit {
+    height: 300px;
+    width: 500px;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+  }
 }
 
 /* users-show */
@@ -307,6 +313,12 @@ footer {
 /* detailed-post */
 .detailed-post {
   height: auto;
+  #show-gmap {
+    height: 300px;
+    width: 500px;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+  }
   .detail {
     background-color: whitesmoke;
     color: #4d4d4d;
@@ -372,6 +384,9 @@ footer {
 
   /*投稿詳細画面*/
   .detailed-post {
+    #show-gmap {
+      width: 300px;
+    }
     img {
       width:100%;
       max-width: 100%;
@@ -544,6 +559,10 @@ footer {
   }
   /* detailed-post*/
   .detailed-post {
+    #show-gmap {
+      margin-left: 1rem;
+      width: 300px;
+    }
     img {
       width:100%;
       max-width: 100%;
@@ -625,9 +644,14 @@ footer {
   }
 
   /*new-post*/
-  .form_group {
-    padding-top: 10px;
-    padding-left: 10px;
+  .new-post {
+    #gmap {
+      margin-left: 1rem;
+      width: 300px;
+    }
+    #draggable {
+      margin: 1rem;
+    }
   }
 
   /*signup*/
@@ -649,4 +673,19 @@ footer {
   .edit-user {
     height: auto;
   }
+
+  /*post-edit*/
+  .post-edit {
+    #gmap-for-edit {
+      margin-left: 1rem;
+      width: 250px;
+      height: 250px;
+    }
+    img {
+      width:100%;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
 }

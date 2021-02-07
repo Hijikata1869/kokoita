@@ -22,9 +22,9 @@
           <%= form.collection_select(:prefecture_id, Prefecture.all, :id, :prefecture) %><span class="must ml-1">必須</span>
         </div>
         <div class="form-row mb-2">
-          <%= form.label :詳細位置情報, class: "mr-3" %>
+          <%= form.label :詳細位置情報, class: "mr-md-3" %>
           <input type="text" size="30" id="address">
-          <input type="button" id="target_button" value="住所検索" class="ml-2 mr-2">
+          <input type="button" id="target_button" value="住所検索" class="ml-md-2 mr-md-2">
         </div>
         <div id='gmap'></div>
         <span id="draggable"><small>住所検索後、マーカーをドラッグ移動できます</small></span>
