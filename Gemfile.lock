@@ -1,7 +1,7 @@
 GIT
-  remote: https://github.com/rubyjs/mini_racer.git
+  remote: https://github.com/sqreen/mini_racer.git
   revision: b0b35eef0cdc1bd0871b4c5e5bf8163e3056d69d
-  branch: refs/pull/186/head
+  branch: use-libv8-node
   specs:
     mini_racer (0.3.1)
       libv8-node (~> 15.5.1.0.beta1)
