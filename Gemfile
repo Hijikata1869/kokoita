@@ -90,9 +90,9 @@ group :production, :staging do
   gem 'unicorn'
 end
 
-group :production, :development do
-  gem 'mini_racer'
-end
+# group :production, :development do
+#   gem 'mini_racer'
+# end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
