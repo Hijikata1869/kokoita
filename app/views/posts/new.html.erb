@@ -41,14 +41,23 @@
           <%= form.text_area :content, size: "30x5" %>
         </div>
 
-        <div class="form-row mb-4">
+        <div class="form-row">
           <%= form.label :画像を選択する, class: "mr-4" %><br>
           <%= form.file_field :image, id: "file" %>
           <%= form.hidden_field :image_cache %>
         </div>
-        <div class="image-preview pb-4">
+        <div class="image-preview">
           <p id="preview"></p>
-          <img id="preview-image" >
+          <img id="preview-image" class="pb-4" >
+        </div>
+
+        <div class="form-row">
+          <%= form.label :タグ, class: "mr-3"  %>
+          <%= form.text_field :tag_name %>
+        </div>
+        <div class="mb-4">
+          <span class="ml-5"><small>スペースを入力することで複数のタグ付けすることができます</small></span><br>
+          <span class="ml-5"><small>例：動物 危険 クマ</small></span>
         </div>
 
         <div class="form-row mb-md-4 mx-auto pb-5 ">
