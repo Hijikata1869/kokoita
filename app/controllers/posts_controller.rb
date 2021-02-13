@@ -36,6 +36,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comment = current_user.comments.build if user_signed_in?
     @comments = @post.comments
+    tag_list = params[:post][:tag_name].split(nil)
   end
 
   def update
