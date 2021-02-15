@@ -35,11 +35,13 @@
               <%= render partial: 'likes/like', locals: { post: @post }%>
             </div>
           </div>
-          <div class="show-tag">
-            <% @tag_list.each do |list| %>
-              <%= list.tag_name %>
-            <% end %>
-          </div>
+          <% if @post.tags? %>
+            <div class="show-tag">
+              <% @tag_list.each do |list| %>
+                <%= list.tag_name %>
+              <% end %>
+            </div>
+          <% end %>
       </div>
     </div>
   </div>
