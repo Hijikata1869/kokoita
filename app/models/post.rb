@@ -23,17 +23,17 @@ class Post < ApplicationRecord
     # このselfはposts_controller.rbで定義された@postのこと
     # @postというインスタンスに対して「.(ドット)」で繋げてインスタンスメソッドを呼び出すとき、インスタンスメソッド内では「self」が使える
     # self=呼び出し元のインスタンス(@post)となる
-    current_tags = self.tags.pluck(:tag_name) unless  self.tags.nil?
+    current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?
     old_tags = current_tags - sent_tags
     new_tags = sent_tags - current_tags
 
     old_tags.each do |old|
-      self.post_tags.delete Tag.find_by(tag_name: old)
+      self.tags.delete Tag.find_by(tag_name: old)
     end
 
     new_tags.each do |new|
       new_post_tag = Tag.find_or_create_by(tag_name: new)
-      self.post_tags << new_post_tag
+      self.tags << new_post_tag
     end
   end
 end
