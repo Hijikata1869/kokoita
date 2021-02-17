@@ -30,6 +30,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @tag_list = @post.tags.pluck(:tag_name).join(" ")
   end
 
   def show
@@ -40,7 +41,9 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+    tag_list = params[:post][:tag_name].split(nil)
     if @post.update(post_update_params)
+      @post.save_tag(tag_list)
       flash[:notice] = '記事を編集しました'
       redirect_to user_path(@post.user_id)
     else
