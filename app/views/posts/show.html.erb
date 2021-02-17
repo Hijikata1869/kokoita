@@ -35,7 +35,8 @@
               <%= render partial: 'likes/like', locals: { post: @post }%>
             </div>
           </div>
-            <div class="show-tag">
+            <div class="show-tag mb-3">
+              タグ：
               <% @post.tags.each do |list| %>
                 <%= list.tag_name %>
               <% end %>
