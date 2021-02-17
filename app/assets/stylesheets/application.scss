@@ -376,6 +376,17 @@ footer {
         height: auto;
       }
     }
+    .danger-post-area {
+      img {
+        width:100%;
+        max-width: 100%;
+        height: auto;
+      }
+      .danger-tag-posts {
+        margin-left: 4rem;
+        margin-right: 4rem;
+      }
+    }
     .ranking-area {
       margin-bottom: 50px;
     }
@@ -475,6 +486,18 @@ footer {
       h2 {
         padding-bottom: 0.5rem;
         margin-bottom: 2rem;
+      }
+    }
+    .danger-post-area {
+      img {
+        width:100%;
+        max-width: 100%;
+        height: auto;
+      }
+      .danger-tag-posts {
+        border-bottom: none;
+        margin-left: 2rem;
+        margin-right: 2rem;
       }
     }
     .ranking-area {
