@@ -15,7 +15,9 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
+    tag_list = params[:tag_name].split(nil)
     if @post.save
+      @post.save_tag(tag_list)
       flash[:notice] = '投稿しました'
       redirect_to user_path(@post.user_id)
     else
@@ -28,6 +30,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @tag_list = @post.tags.pluck(:tag_name).join(" ")
   end
 
   def show
@@ -38,7 +41,9 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+    tag_list = params[:post][:tag_name].split(nil)
     if @post.update(post_update_params)
+      @post.save_tag(tag_list)
       flash[:notice] = '記事を編集しました'
       redirect_to user_path(@post.user_id)
     else
@@ -57,7 +62,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.permit(:found_animal, :content, :category_id, :prefecture_id, :found_date, :image, :latitude, :longitude).merge(user_id: current_user.id)
+    params.permit(:found_animal, :content, :category_id, :prefecture_id, :found_date, :image, :latitude, :longitude).merge(user_id: current_user.id, )
   end
 
   def post_update_params

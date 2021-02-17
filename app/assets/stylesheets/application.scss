@@ -156,6 +156,16 @@ footer {
       }
     }
   }
+  .danger-post-area {
+    h2 {
+      border-bottom: #c1994d 1px solid;
+    }
+    .danger-tag-posts {
+      border-bottom: #c1994d 1px solid;
+      margin-left: 220px;
+      margin-right: 220px;
+    }
+  }
   .ranking-area {
     h2 {
       border-bottom: #c1994d 1px solid;
@@ -366,6 +376,17 @@ footer {
         height: auto;
       }
     }
+    .danger-post-area {
+      img {
+        width:100%;
+        max-width: 100%;
+        height: auto;
+      }
+      .danger-tag-posts {
+        margin-left: 4rem;
+        margin-right: 4rem;
+      }
+    }
     .ranking-area {
       margin-bottom: 50px;
     }
@@ -465,6 +486,18 @@ footer {
       h2 {
         padding-bottom: 0.5rem;
         margin-bottom: 2rem;
+      }
+    }
+    .danger-post-area {
+      img {
+        width:100%;
+        max-width: 100%;
+        height: auto;
+      }
+      .danger-tag-posts {
+        border-bottom: none;
+        margin-left: 2rem;
+        margin-right: 2rem;
       }
     }
     .ranking-area {

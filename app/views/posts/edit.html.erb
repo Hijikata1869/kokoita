@@ -37,6 +37,10 @@
         <div class="form-row pt-4">
           <p><label><%= f.check_box :remove_image %>記事の画像を削除する</label></p>
         </div>
+        <div class="form-row pb-4 mb-0">
+          <%= f.label :タグ, class: "mr-3" %>
+          <%= f.text_field :tag_name, value: @tag_list %>
+        </div>
           <%= f.submit "更新する", class: "btn btn-success px-4" %>
       <% end %>
     </div>
