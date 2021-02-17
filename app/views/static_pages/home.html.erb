@@ -20,6 +20,47 @@
       </div>
     </div>
   </div>
+  <div class="danger-post-area pb-4">
+    <div class="container">
+      <h2 class="text-center pb-md-1">危険生物速報</h2>
+      <p class="mb-md-5 text-center"><small>「危険」タグのついた投稿が新着順に表示されます</small></p>
+      <% @danger_tag_posts.each do |p| %>
+        <div class="danger-tag-posts d-lg-flex flex-lg-row mb-md-4">
+          <div class="danger-post-image mr-md-3">
+            <% if p.image? %>
+              <%= link_to image_tag(p.image.post_thumb.url), post_path(p.id), data: {"turbolinks"=>false} %>
+            <% else %>
+              <%= image_tag 'noimage.png', class: "mr-md-4" %>
+            <% end %>
+          </div>
+          <div class="danger-post-content">
+            <h4><%= p.found_animal %></h4>
+            <p>
+              発見者：<%= link_to p.user.nickname, user_path(p.user_id), class: "post-user link-to", data: {"turbolinks"=>false} %>
+            </p>
+            <p>
+              <span><%= p.found_date.year %>年</span>
+              <span><%= p.found_date.month %>月</span>
+              <span><%= p.prefecture.prefecture %></span>
+            </p>
+            <span class="timestamp">
+              <% if p.created_at != p.updated_at %>
+                <%= time_ago_in_words(p.created_at) %>前に投稿
+                <%= time_ago_in_words(p.updated_at) %>前に編集
+              <% else %>
+                <%= time_ago_in_words(p.created_at) %>前に投稿
+              <% end %>
+              <%= link_to "詳しく見る", post_path(p.id), class: "link-to", data: {"turbolinks"=>false} %>
+              <% if user_signed_in? && current_user.id == p.user_id %>
+                <%= link_to "編集する", edit_post_path(p), class: "link-to",  data: {"turbolinks"=>false} %>
+                <%= link_to "削除する", p, method: :delete, data: { confirm: "削除してよろしいですか？" }, class: "link-to" %>
+              <% end %>
+            </span>
+          </div>
+        </div><br>
+      <% end %>
+    </div>
+  </div>
   <div class="ranking-area pb-4">
     <div class="container">
       <h2 class="text-center pb-md-1 mb-md-5">いいねランキング</h2>

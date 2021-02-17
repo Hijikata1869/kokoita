@@ -4,12 +4,12 @@
       <% if post.image? %>
         <%= link_to image_tag(post.image.post_thumb.url), post_path(post.id), data: {"turbolinks"=>false} %>
       <% else %>
-        <%= image_tag 'noimage.png' %>
+        <%= image_tag 'noimage.png', class: "mr-md-4" %>
       <% end %>
     </div>
     <div class="post-content">
       <h4><span><%= post.found_animal %></span></h4>
-      <p>発見者：<%= link_to post.user.nickname, user_path(post.user_id), class: "post-user link-to" %></p>
+      <p>発見者：<%= link_to post.user.nickname, user_path(post.user_id), class: "post-user link-to", data: {"turbolinks"=>false} %></p>
       <p>
       <span><%= post.found_date.year %>年</span>
       <span><%= post.found_date.month %>月</span>
