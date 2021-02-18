@@ -15,13 +15,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Kosugi+Maru&family=Noto+Sans+JP:wght@900&display=swap" rel="stylesheet">
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@Liv04262248" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.kokoita.net/" />
-    <meta property="og:title" content="Kokoita" />
-    <meta property="og:description" content="あなたが出会った生き物の「ここにいた」をみんなに伝えよう！" />
-    <meta property="og:image" content="<%= asset_url('forest5.jpg') %>" />
-    <meta name="twitter:image" content="<%= asset_url('forest5.jpg') %>" />
     <meta property="fb:app_id" content="732740227644268" />
+    <%= yield(:ogp) %>
   </head>
 
   <body>

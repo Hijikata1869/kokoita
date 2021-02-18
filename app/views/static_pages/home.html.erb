@@ -1,3 +1,12 @@
+<%= content_for(:ogp) do %>
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.kokoita.net/" />
+  <meta property="og:title" content="Kokoita" />
+  <meta property="og:description" content="あなたが出会った生き物の「ここにいた」をみんなに伝えよう！" />
+  <meta property="og:image" content="<%= asset_url('forest5.jpg') %>" />
+  <meta name="twitter:image" content="<%= asset_url('forest5.jpg') %>" />
+  <meta property="fb:app_id" content="732740227644268" />
+<% end %>
 <div class="home pb-md-2">
 
   <div class="top">
