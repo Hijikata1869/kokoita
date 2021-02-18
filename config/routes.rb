@@ -10,6 +10,13 @@ Rails.application.routes.draw do
     resource :likes, only: %i[create destroy]
     resource :comments, only: %i[create destroy]
   end
+
+  resources :users do
+    resource :relationships, only: [:create, :destroy]
+    get :follows, on: :member
+    get :followers, on: :member
+  end
+
   root 'static_pages#home'
   get  'help', to: 'static_pages#help'
   get  'about', to: 'static_pages#about'
