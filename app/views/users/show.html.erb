@@ -11,6 +11,15 @@
         <% end %><br>
         <% if user_signed_in? && current_user.id == @user.id %>
           <%= link_to "登録情報の更新", edit_user_registration_path, class: "btn btn-outline-success mt-md-2 mb-md-5 ml-md-3 update-btn" %>
+          <p><%= link_to "フォローしているユーザ", follows_user_path(@user.id) %></p>
+          <p><%= link_to "フォロワー", followers_user_path(@user.id) %></p>
+        <% end %>
+        <% if current_user != @user %>
+          <% if @user.followed_by?(current_user) %>
+            <p><%= link_to "フォロー解除", user_relationships_path(@user.id), class: "btn btn-success mt-md-2 ml-md-4", method: :delete %></p>
+          <% else %>
+            <p><%= link_to "フォローする", user_relationships_path(@user.id), class: "btn btn-success mt-md-2 ml-md-4", method: :post %></p>
+          <% end %>
         <% end %>
       </div>
       <div class="col-md-8 post-title">
