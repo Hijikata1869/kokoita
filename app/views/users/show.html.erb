@@ -10,15 +10,15 @@
           <%= image_tag 'noimage.png' %>
         <% end %><br>
         <% if user_signed_in? && current_user.id == @user.id %>
-          <%= link_to "登録情報の更新", edit_user_registration_path, class: "btn btn-outline-success mt-md-2 mb-md-5 ml-md-3 update-btn" %>
-          <p><%= link_to "フォローしているユーザ", follows_user_path(@user.id) %></p>
-          <p><%= link_to "フォロワー", followers_user_path(@user.id) %></p>
+          <%= link_to "登録情報の更新", edit_user_registration_path, class: "btn btn-outline-success mt-md-2 mb-md-4 ml-md-3 update-btn" %>
+          <p><%= link_to "フォローしているユーザ", follows_user_path(@user.id), class: "btn btn-success", data: {"turbolinks"=>false} %></p>
+          <p><%= link_to "フォローされているユーザ", followers_user_path(@user.id), class: "btn btn-success", data: {"turbolinks"=>false} %></p>
         <% end %>
         <% if current_user != @user %>
           <% if @user.followed_by?(current_user) %>
-            <p><%= link_to "フォロー解除", user_relationships_path(@user.id), class: "btn btn-success mt-md-2 ml-md-4", method: :delete %></p>
+            <p><%= link_to "フォロー解除", user_relationships_path(@user.id), class: "btn btn-success mt-md-2 ml-md-4", method: :delete, data: {"turbolinks"=>false} %></p>
           <% else %>
-            <p><%= link_to "フォローする", user_relationships_path(@user.id), class: "btn btn-success mt-md-2 ml-md-4", method: :post %></p>
+            <p><%= link_to "フォローする", user_relationships_path(@user.id), class: "btn btn-success mt-md-2 ml-md-4", method: :post, data: {"turbolinks"=>false} %></p>
           <% end %>
         <% end %>
       </div>

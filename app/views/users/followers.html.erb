@@ -1,21 +1,28 @@
-<div class="followers">
-  <div class="container">
-    <div class="follower-user">
+<div class="followers pt-5">
+  <div class="container pt-5">
+    <h2 class="mb-4">フォロされているユーザ</h2>
+    <div class="follower-user ml-md-5">
       <% @users.each do |user| %>
-        <%= user.nickname %>
-        <% if user.picture? %>
-          <%= image_tag user.picture.thumb.url, class: 'user-picture' %>
-        <% else %>
-          <%= image_tag 'noimage.png' %>
-        <% end %>
-        <% if current_user != @user %>
-          <% if user.followed_by?(current_user) %>
-            <p><%= link_to "フォロー解除", user_relationships_path(user.id), class: "btn btn-success mt-md-2 ml-md-4", method: :delete %></p>
-          <% else %>
-            <p><%= link_to "フォローする", user_relationships_path(user.id), class: "btn btn-success mt-md-2 ml-md-4", method: :post %></p>
-          <% end %>
-        <% end %>
-      <% end %>
+        <div class="row mb-md-5">
+          <div class="follower-picture col-md-3">
+            <% if user.picture? %>
+              <%= image_tag user.picture.thumb.url, class: 'user-picture' %>
+            <% else %>
+              <%= image_tag 'noimage.png' %>
+            <% end %>
+          </div>
+          <div class="col-md-8 pt-md-5">
+            <h3><%= link_to "#{user.nickname}", user_path(user.id), class: "link-to", data: {"turbolinks"=>false} %></h3>
+            <% if current_user != @user %>
+              <% if user.followed_by?(current_user) %>
+                <p><%= link_to "フォロー解除", user_relationships_path(user.id), class: "btn btn-success mt-md-2", method: :delete, data: {"turbolinks"=>false} %></p>
+              <% else %>
+                <p><%= link_to "フォローする", user_relationships_path(user.id), class: "btn btn-success mt-md-2", method: :post, data: {"turbolinks"=>false} %></p>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% end %><br>
     </div>
   </div>
 </div>
