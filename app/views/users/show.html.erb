@@ -14,13 +14,11 @@
           <p><%= link_to "フォローしているユーザ", follows_user_path(@user.id), class: "btn btn-success", data: {"turbolinks"=>false} %></p>
           <p><%= link_to "フォローされているユーザ", followers_user_path(@user.id), class: "btn btn-success", data: {"turbolinks"=>false} %></p>
         <% end %>
-        <% if current_user != @user %>
-          <% if @user.followed_by?(current_user) %>
-            <p><%= link_to "フォロー解除", user_relationships_path(@user.id), class: "btn btn-success mt-md-2 ml-md-4", method: :delete, data: {"turbolinks"=>false} %></p>
-          <% else %>
-            <p><%= link_to "フォローする", user_relationships_path(@user.id), class: "btn btn-success mt-md-2 ml-md-4", method: :post, data: {"turbolinks"=>false} %></p>
-          <% end %>
-        <% end %>
+        <div class="follow">
+          <div id="follow_buttons">
+            <%= render partial: 'relationships/relation', locals: { user: @user } %>
+          </div>
+        </div>
       </div>
       <div class="col-md-8 post-title">
         <% if @user.posts.any? %>

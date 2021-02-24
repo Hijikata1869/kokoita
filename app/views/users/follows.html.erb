@@ -14,7 +14,7 @@
             </div>
             <div class="col-md-8 pt-md-5">
               <h3><%= link_to "#{user.nickname}", user_path(user.id), class: "link-to ml-md-5", data: {"turbolinks"=>false} %></h3>
-              <% if current_user != @user %>
+              <% if current_user != user %>
                 <% if user.followed_by?(current_user) %>
                   <p class="button"><%= link_to "フォロー解除", user_relationships_path(user.id), class: "btn btn-success mt-md-2 ml-md-5", method: :delete, data: {"turbolinks"=>false} %></p>
                 <% else %>

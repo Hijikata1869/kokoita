@@ -1,0 +1,17 @@
+<% if current_user != user %>
+  <% if user.followed_by?(current_user) %>
+    <p>
+      <%= link_to user_relationships_path(user.id), class: "link-to", method: :delete, remote: true do %>
+        <i class="fas fa-user-alt fa-2x"></i>
+        フォロー解除
+      <% end %>
+    </p>
+  <% else %>
+    <p>
+      <%= link_to user_relationships_path(user.id), class: "link-to", method: :post, remote: true do %>
+        <i class="fas fa-user-plus fa-2x"></i>
+        フォローする
+      <% end %>
+    </p>
+  <% end %>
+<% end %>
