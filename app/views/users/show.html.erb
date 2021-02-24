@@ -15,7 +15,7 @@
           <p><%= link_to "フォローされているユーザ", followers_user_path(@user.id), class: "btn btn-success", data: {"turbolinks"=>false} %></p>
         <% end %>
         <div class="follow">
-          <div id="follow_buttons">
+          <div id="follow_button">
             <%= render partial: 'relationships/relation', locals: { user: @user } %>
           </div>
         </div>
