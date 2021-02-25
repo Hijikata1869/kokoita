@@ -141,6 +141,16 @@ footer {
     }
   }
 
+  .following-user-posts {
+    h2 {
+      border-bottom: #c1994d 1px solid;
+    }
+    .following-post {
+      border-bottom: #c1994d 1px solid;
+      margin-left: 220px;
+      margin-right: 220px;
+    }
+  }
 
   .post-area {
     width: 100%;
@@ -287,6 +297,12 @@ footer {
   ol {
     list-style: none;
   }
+  .follow {
+    p {
+      margin-left: 2.5rem;
+      margin-top: 1rem;
+    }
+  }
 }
 
 /* search */
@@ -353,6 +369,31 @@ footer {
   border-bottom: solid 1px;
 }
 
+/*follower*/
+.followers {
+  img {
+    border-radius: 50%;
+  }
+  .user-name {
+    h3 {
+      margin-top: 5rem;
+    }
+  }
+}
+
+// following
+.following {
+  img {
+    border-radius: 50%;
+  }
+  .user-name {
+    h3 {
+      margin-top: 5rem;
+    }
+  }
+}
+
+
 /* レスポンシブ */
 /* タブレット */
 
@@ -383,6 +424,17 @@ footer {
         height: auto;
       }
       .danger-tag-posts {
+        margin-left: 4rem;
+        margin-right: 4rem;
+      }
+    }
+    .following-user-posts {
+      img {
+        width:100%;
+        max-width: 100%;
+        height: auto;
+      }
+      .following-post {
         margin-left: 4rem;
         margin-right: 4rem;
       }
@@ -500,6 +552,18 @@ footer {
         margin-right: 2rem;
       }
     }
+    .following-user-posts {
+      img {
+        width:100%;
+        max-width: 100%;
+        height: auto;
+      }
+      .following-post {
+        border-bottom: none;
+        margin-left: 2rem;
+        margin-right: 2rem;
+      }
+    }
     .ranking-area {
       .container {
         padding-left: 0px;
@@ -570,6 +634,15 @@ footer {
     justify-content: center;
   }
 
+  // following-user-posts
+  .following-user-posts {
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+  }
+
   /*postarea*/
   .post-area {
     .posts {
@@ -625,6 +698,18 @@ footer {
     padding-top: 20px;
     h1 {
       margin-bottom: 0px;
+    }
+    .following-button {
+      margin-left: 4rem;
+    }
+    .follower-button {
+      margin-left: 4rem;
+    }
+    .follow {
+      p {
+        margin-top: 0px;
+        margin-left: 7rem;
+      }
     }
     .user-picture {
       border-radius: 50%;
@@ -718,6 +803,50 @@ footer {
       width:100%;
       max-width: 100%;
       height: auto;
+    }
+  }
+
+  // following
+  .following {
+    .container {
+      h2 {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      .following-user {
+        text-align: center;
+        .row {
+          margin-bottom: 3rem;
+        }
+        h3{
+          margin-top: 1rem;
+        }
+        .button {
+          margin-bottom: 5rem;
+        }
+      }
+    }
+  }
+
+  // followers
+  .followers {
+    .container {
+      h2 {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      .follower-user {
+        text-align: center;
+        .row {
+          margin-bottom: 3rem;
+        }
+        h3{
+          margin-top: 1rem;
+        }
+        .button {
+          margin-bottom: 5rem;
+        }
+      }
     }
   }
 
