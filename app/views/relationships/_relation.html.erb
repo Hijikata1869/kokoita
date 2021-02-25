@@ -1,11 +1,11 @@
 <% if user_signed_in? && current_user != user %>
   <% if current_user.following?(user) %>
     <p>
-      <%= link_to "フォロー解除", user_relationships_path(user.id), class: "btn btn-success", method: :delete, remote: true %>
+      <%= link_to "フォロー解除", user_relationships_path(user.id), class: "btn btn-success", method: :delete, remote: true, data: {"turbolinks"=>false} %>
     </p>
   <% else %>
     <p>
-      <%= link_to "フォローする", user_relationships_path(user.id), class: "btn btn-outline-success", method: :post, remote: true %>
+      <%= link_to "フォローする", user_relationships_path(user.id), class: "btn btn-outline-success", method: :post, remote: true, data: {"turbolinks"=>false} %>
     </p>
   <% end %>
 <% end %>

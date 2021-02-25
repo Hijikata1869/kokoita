@@ -7,16 +7,13 @@
           <div class="row mb-md-5">
             <div class="follower-picture col-md-3">
               <% if user.picture? %>
-                <%= image_tag user.picture.thumb.url, class: 'user-picture' %>
+                <%= link_to image_tag(user.picture.thumb.url), user_path(user.id), data: {"turbolinks"=>false} %>
               <% else %>
                 <%= image_tag 'noimage.png' %>
               <% end %>
             </div>
             <div class="col-md-3 user-name">
               <h3><%= link_to "#{user.nickname}", user_path(user.id), class: "link-to ml-md-5", data: {"turbolinks"=>false} %></h3>
-            </div>
-            <div id="follow_buttons_<%= user.id %>" class="col-md-3 button">
-              <%= render partial: 'relationships/relation', locals: { user: user } %>
             </div>
           </div>
         <% end %><br>

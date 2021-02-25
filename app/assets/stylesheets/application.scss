@@ -297,6 +297,12 @@ footer {
   ol {
     list-style: none;
   }
+  .follow {
+    p {
+      margin-left: 2.5rem;
+      margin-top: 1rem;
+    }
+  }
 }
 
 /* search */
@@ -363,16 +369,27 @@ footer {
   border-bottom: solid 1px;
 }
 
-/*follow*/
+/*follower*/
 .followers {
   img {
     border-radius: 50%;
   }
+  .user-name {
+    h3 {
+      margin-top: 5rem;
+    }
+  }
 }
 
+// following
 .following {
   img {
     border-radius: 50%;
+  }
+  .user-name {
+    h3 {
+      margin-top: 5rem;
+    }
   }
 }
 
@@ -682,6 +699,18 @@ footer {
     h1 {
       margin-bottom: 0px;
     }
+    .following-button {
+      margin-left: 4rem;
+    }
+    .follower-button {
+      margin-left: 4rem;
+    }
+    .follow {
+      p {
+        margin-top: 0px;
+        margin-left: 7rem;
+      }
+    }
     .user-picture {
       border-radius: 50%;
       padding: 40px;
@@ -786,6 +815,9 @@ footer {
       }
       .following-user {
         text-align: center;
+        .row {
+          margin-bottom: 3rem;
+        }
         h3{
           margin-top: 1rem;
         }
@@ -805,6 +837,9 @@ footer {
       }
       .follower-user {
         text-align: center;
+        .row {
+          margin-bottom: 3rem;
+        }
         h3{
           margin-top: 1rem;
         }
