@@ -1,6 +1,6 @@
 <div class="following pt-5">
   <div class="container pt-md-5">
-    <h2 class="mb-4">フォローしているユーザ</h2>
+    <h2 class="mb-4">フォローしているユーザー</h2>
     <% if @users.exists? %>
       <div class="following-user ml-md-5">
         <% @users.each do |user| %>
@@ -19,7 +19,7 @@
         <% end %><br>
       </div>
     <% else %>
-     <p>フォローしているユーザはいません</p>
+     <p>フォローしているユーザーはいません</p>
     <% end %>
   </div>
 </div>
