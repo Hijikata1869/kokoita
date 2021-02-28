@@ -89,10 +89,19 @@ function initMap(){
     zoom: 12,
   });
 
-  let marker = new google.maps.Marker({
+  let thisPostMarker = new google.maps.Marker({
     position: map.getCenter(),
     map: map
   });
+
+  let posts = gon.posts;
+
+  for (let i = 0; i < posts.length; i++) {
+    let marker[i] = new google.maps.Marker({
+      position: {lat: posts[i].latitude, lng: posts[i].longitude },
+      map: map
+    });
+  }
 
 }
 </script>

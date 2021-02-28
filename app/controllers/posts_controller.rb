@@ -37,6 +37,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comment = current_user.comments.build if user_signed_in?
     @comments = @post.comments
+    gon.posts = Post.where.not(latitude: nil)
   end
 
   def update
