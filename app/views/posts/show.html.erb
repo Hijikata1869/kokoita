@@ -84,20 +84,19 @@
 <script>
 let map;
 let posts = gon.posts;
-let marker =[];
+let marker
 function initMap(){
   map = new google.maps.Map(document.getElementById('show-gmap'), {
     center: {lat:<%= @post.latitude %>, lng:<%= @post.longitude %>},
-    zoom: 12,
+    zoom: 8,
   });
 
   for (let i = 0; i < posts.length; i++){
     marker = new google.maps.Marker({
-      position: {lat: posts[i].latitude, lng: posts[i].latitude},
+      position: {lat: posts[i].latitude, lng: posts[i].longitude},
       map: map
     });
   }
-
 }
 
 </script>
