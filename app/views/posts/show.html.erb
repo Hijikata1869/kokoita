@@ -85,6 +85,7 @@
 let map;
 let posts = gon.posts;
 let marker
+let infoWindow
 function initMap(){
   map = new google.maps.Map(document.getElementById('show-gmap'), {
     center: {lat:<%= @post.latitude %>, lng:<%= @post.longitude %>},
@@ -94,8 +95,13 @@ function initMap(){
   for (let i = 0; i < posts.length; i++){
     marker = new google.maps.Marker({
       position: {lat: posts[i].latitude, lng: posts[i].longitude},
-      map: map
+      map: map,
     });
+    infoWindow = new google.maps.InfoWindow({
+      content: `${posts[i].found_animal}`,
+      disableAutoPan: true
+    });
+    infoWindow.open(map, marker) ;
   }
 }
 
