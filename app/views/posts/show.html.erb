@@ -89,14 +89,48 @@ let infoWindow
 function initMap(){
   map = new google.maps.Map(document.getElementById('show-gmap'), {
     center: {lat:<%= @post.latitude %>, lng:<%= @post.longitude %>},
-    zoom: 8,
+    zoom: 10,
   });
 
   for (let i = 0; i < posts.length; i++){
-    marker = new google.maps.Marker({
-      position: {lat: posts[i].latitude, lng: posts[i].longitude},
-      map: map,
-    });
+    if(posts[i].category_id == 1){
+      marker = new google.maps.Marker({
+        position: {lat: posts[i].latitude, lng: posts[i].longitude},
+        map: map,
+        icon: "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+      });
+    } else if (posts[i].category_id == 2){
+      marker = new google.maps.Marker({
+        position: {lat: posts[i].latitude, lng: posts[i].longitude},
+        map: map,
+        icon: "https://maps.google.com/mapfiles/ms/micons/blue-dot.png"
+      });
+    } else if (posts[i].category_id == 3){
+      marker = new google.maps.Marker({
+        position: {lat: posts[i].latitude, lng: posts[i].longitude},
+        map: map,
+        icon: "https://maps.google.com/mapfiles/ms/micons/yellow-dot.png"
+      });
+    } else if (posts[i].category_id == 4){
+      marker = new google.maps.Marker({
+        position: {lat: posts[i].latitude, lng: posts[i].longitude},
+        map: map,
+        icon: "https://maps.google.com/mapfiles/ms/micons/green-dot.png"
+      });
+    } else if (posts[i].category_id == 5){
+      marker = new google.maps.Marker({
+        position: {lat: posts[i].latitude, lng: posts[i].longitude},
+        map: map,
+        icon: "https://maps.google.com/mapfiles/ms/micons/purple-dot.png"
+      });
+    } else if(posts[i].category_id == 6){
+      marker = new google.maps.Marker({
+        position: {lat: posts[i].latitude, lng: posts[i].longitude},
+        map: map,
+        icon: "https://maps.google.com/mapfiles/ms/micons/ltblue-dot.png"
+      });
+    }
+
     infoWindow = new google.maps.InfoWindow({
       content: `${posts[i].found_animal}`,
       disableAutoPan: true
