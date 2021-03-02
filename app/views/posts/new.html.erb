@@ -21,16 +21,15 @@
           <%= form.label :発見場所, class: "mr-5" %>
           <%= form.collection_select(:prefecture_id, Prefecture.all, :id, :prefecture) %><span class="must ml-1">必須</span>
         </div>
-        <div class="form-row mb-2">
+        <div class="form-row">
           <%= form.label :詳細位置情報, class: "mr-md-3" %>
           <input type="text" size="30" id="address">
           <input type="button" id="target_button" value="地名検索" class="ml-md-2 mr-md-2">
         </div>
-        <div id='gmap'></div>
         <span id="draggable"><small>地名検索後、マーカーをドラッグ移動してください</small></span>
+        <div id='gmap'></div>
           <%= form.hidden_field :latitude, {id: "target_latitude"} %>
           <%= form.hidden_field :longitude, {id: "target_longitude"} %>
-
         <div class="form-row mt-4 mb-4">
           <%= form.label :発見年／月, class: "mr-4" %>
           <%= form.date_select(:found_date, date_separator: "/", discard_day: true) %><span class="must ml-1">必須</span>
@@ -71,7 +70,7 @@
   let map;
   function initMap(){
     map = new google.maps.Map(document.getElementById('gmap'), {
-      center: {lat: 38.26020362574981, lng:140.88349151611325},
+      center: {lat: 35.6812, lng:139.767},
       zoom: 13,
     });
     let targetButton = document.getElementById('target_button');
