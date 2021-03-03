@@ -123,7 +123,7 @@ function initMap(){
         map: map,
         icon: "https://maps.google.com/mapfiles/ms/micons/purple-dot.png"
       });
-    } else if(posts[i].category_id == 6){
+    } else {
       marker = new google.maps.Marker({
         position: {lat: posts[i].latitude, lng: posts[i].longitude},
         map: map,
